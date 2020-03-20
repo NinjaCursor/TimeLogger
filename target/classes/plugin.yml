@@ -1,0 +1,12 @@
+name: PluginName
+main: YourPluginName.Main.Main
+version: 1.0
+api-version: 1.13
+depend: []
+commands:
+  example-command:
+    description: select player who invited you
+    permission:
+    permissions: []
+    permission-message: Error permissions
+    usage: "Usage: /invitedby player"
