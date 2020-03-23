@@ -14,5 +14,5 @@ public abstract class SequentialRunnable<T> {
         return completableFuture;
     }
 
-    abstract boolean run();
+    public abstract boolean run();
 }

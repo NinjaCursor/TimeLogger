@@ -1,4 +1,4 @@
-package YourPluginName.Storage;
+package YourPluginName.Storage.Summary;
 
 import org.bukkit.configuration.serialization.ConfigurationSerializable;
 import org.bukkit.configuration.serialization.SerializableAs;
@@ -6,6 +6,8 @@ import org.bukkit.configuration.serialization.SerializableAs;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
+import java.util.function.Function;
+import java.util.function.Predicate;
 
 @SerializableAs("AccumulatedData")
 public class AccumulatedData implements ConfigurationSerializable {
@@ -70,6 +72,10 @@ public class AccumulatedData implements ConfigurationSerializable {
         return getTotal() / this.starts;
     }
 
+    public boolean isActive() {
+        return active;
+    }
+
     @Override
     public Map<String, Object> serialize() {
         HashMap<String, Object> hashMap = new HashMap<>();
@@ -88,6 +94,10 @@ public class AccumulatedData implements ConfigurationSerializable {
                 (long) args.get("first_punch_in")
         );
         return aData;
+    }
+
+    public static Predicate<AccumulatedData> onlyActive() {
+        return (accData) -> accData.isActive();
     }
 
 }

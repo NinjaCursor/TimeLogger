@@ -1,4 +1,4 @@
-package YourPluginName.Storage;
+package YourPluginName.Storage.Log;
 
 import org.bukkit.configuration.serialization.ConfigurationSerializable;
 import org.bukkit.configuration.serialization.SerializableAs;
@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.UUID;
 
 @SerializableAs("LogData")
-public class LogData implements ConfigurationSerializable {
+public class LogData implements ConfigurationSerializable, Comparable<LogData> {
 
     private SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMMMM yyyy HH:mm:ss.SSSZ");
     private LogType logType;
@@ -53,7 +53,16 @@ public class LogData implements ConfigurationSerializable {
     }
 
     public static LogData deserialize(Map<String, Object> args) {
-        return new LogData(LogType.valueOf((String) args.get("description")), UUID.fromString((String) args.get("uuid")), (long) args.get("time_stamp_epoch"), (long) args.get("id"));
+        return new LogData(LogType.valueOf((String) args.get("description")), UUID.fromString((String) args.get("uuid")), ((Number) args.get("time_stamp_epoch")).longValue(), ((Number) args.get("id")).longValue());
     }
 
+    @Override
+    public int compareTo(LogData o) {
+        if (this.id < o.getId())
+            return -1;
+        else if (this.id > o.getId())
+            return 1;
+        else
+            return 0;
+    }
 }

@@ -1,8 +1,11 @@
 package YourPluginName.Main;
 import YourPluginName.Listeners.LogInListener;
+import YourPluginName.Storage.Summary.AccumulatedData;
+import YourPluginName.Storage.Log.LogData;
 import YourPluginName.Storage.SQLPool;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.configuration.serialization.ConfigurationSerialization;
 import org.bukkit.plugin.java.JavaPlugin;
 import java.io.File;
 
@@ -13,7 +16,8 @@ public class Main extends JavaPlugin {
     private static TimeManager timeManager;
 
     static {
-        
+        ConfigurationSerialization.registerClass(LogData.class);
+        ConfigurationSerialization.registerClass(AccumulatedData.class);
     }
 
     public static VertXLogger log() {
@@ -35,7 +39,7 @@ public class Main extends JavaPlugin {
 
         boolean usingDatabase = getConfig().getBoolean("use-database");
         try {
-            timeManager = new TimeManager("LOGINS");
+            timeManager = new TimeManager("logins");
         } catch (Exception e) {
             e.printStackTrace();
         }
