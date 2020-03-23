@@ -1,7 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="481a7d82-8e6d-4c1d-8eef-7520c7c1c4ab" name="Default Changelist" comment="" />
+    <list default="true" id="481a7d82-8e6d-4c1d-8eef-7520c7c1c4ab" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/YourPluginName/Main/TimeManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/YourPluginName/Main/TimePlayer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/YourPluginName/Storage/AccumulatedHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/YourPluginName/Storage/LogType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/YourPluginName/Listeners/LogInListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/YourPluginName/Listeners/LogInListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/YourPluginName/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/YourPluginName/Main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/YourPluginName/Main/TimeHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/YourPluginName/Storage/AccumulatedData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/YourPluginName/Storage/AccumulatedData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/YourPluginName/Storage/BlockingQueueHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/YourPluginName/Storage/BlockingQueueHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/YourPluginName/Storage/DatabaseTools.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/YourPluginName/Storage/GeneralDataTools.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/YourPluginName/Storage/GeneralDataTools.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/YourPluginName/Storage/LocalFileTools.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/YourPluginName/Storage/LocalFileTools.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/YourPluginName/Storage/LogData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/YourPluginName/Storage/LogData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/YourPluginName/Storage/LogHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/YourPluginName/Storage/LogHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/YourPluginName/Storage/SQLPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/YourPluginName/Storage/SQLPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/YourPluginName/Storage/SequentialRunnable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/YourPluginName/Storage/SequentialRunnable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,22 +30,28 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1XoRIE1pqOBXQyIWipteTNT7yde" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../VertXTimeManagement" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -57,7 +83,7 @@
       <workItem from="1581710382217" duration="808000" />
       <workItem from="1581728201216" duration="7292000" />
       <workItem from="1581816232574" duration="15556000" />
-      <workItem from="1584732169467" duration="4892000" />
+      <workItem from="1584732169467" duration="33313000" />
     </task>
     <servers />
   </component>
@@ -65,26 +91,36 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1380" y="334" key="#com.intellij.ide.util.MemberChooser" timestamp="1584741743371">
+    <state x="1380" y="334" key="#com.intellij.ide.util.MemberChooser" timestamp="1584915618311">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="1725" y="420" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1581887532105" />
-    <state x="1380" y="334" key="#com.intellij.ide.util.MemberChooser/2560.0.1280.974/0.0.2048.1112@0.0.2048.1112" timestamp="1584741743371" />
-    <state x="1010" y="447" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1581817536545">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="1380" y="334" key="#com.intellij.ide.util.MemberChooser/2560.0.1280.974/0.0.2048.1112@0.0.2048.1112" timestamp="1584915618311" />
+    <state x="808" y="355" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1584817108491">
+      <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="1010" y="447" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1581817536545" />
+    <state x="808" y="355" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/2560.0.1280.974/0.0.2048.1112@0.0.2048.1112" timestamp="1584817108491" />
     <state x="1700" y="459" key="FileChooserDialogImpl" timestamp="1581881307521">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1700" y="459" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1581881307521" />
+    <state x="533" y="198" key="SettingsEditor" timestamp="1584906627427">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="533" y="198" key="SettingsEditor/2560.0.1280.974/0.0.2048.1112@0.0.2048.1112" timestamp="1584906627427" />
     <state x="1302" y="428" key="new project wizard" timestamp="1581711189845">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1302" y="428" key="new project wizard/0.0.2560.1400@0.0.2560.1400" timestamp="1581711189845" />
-    <state x="1583" y="320" width="672" height="678" key="search.everywhere.popup" timestamp="1581728450475">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="681" y="259" width="672" height="677" key="run.anything.popup" timestamp="1584840130995">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="681" y="259" width="672" height="677" key="run.anything.popup/2560.0.1280.974/0.0.2048.1112@0.0.2048.1112" timestamp="1584840130995" />
+    <state x="1266" y="254" width="672" height="539" key="search.everywhere.popup" timestamp="1584923553532">
+      <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="1583" y="320" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1581728450475" />
+    <state x="1266" y="254" width="672" height="539" key="search.everywhere.popup/2560.0.1280.974/0.0.2048.1112@0.0.2048.1112" timestamp="1584923553532" />
   </component>
 </project>

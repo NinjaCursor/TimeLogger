@@ -1,6 +1,8 @@
 package YourPluginName.Listeners;
 
 import YourPluginName.Main.Main;
+import YourPluginName.Storage.LogData;
+import YourPluginName.Storage.LogType;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerLoginEvent;
@@ -15,13 +17,15 @@ public class LogInListener implements Listener {
     public void onLogin(PlayerLoginEvent event) {
         Player player = event.getPlayer();
         UUID uuid = player.getUniqueId();
-        Main.getLog().log("Login detected!");
+        Main.getTimeManager().start(uuid);
+        Main.log().log("Login detected!");
     }
 
     @EventHandler
     public void onLogOut(PlayerQuitEvent event) {
         Player player = event.getPlayer();
         UUID uuid = player.getUniqueId();
+        Main.getTimeManager().stop(uuid);
         Main.log().log("Logout detected!");
     }
 

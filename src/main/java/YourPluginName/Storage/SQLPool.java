@@ -26,23 +26,23 @@ public class SQLPool {
             password = config.getString("password");
         } catch (Exception e) {
             e.printStackTrace();
-            Main.getLog().error("Could not load MySQL data from configuration file");
+            Main.log().error("Could not load MySQL data from configuration file");
         }
 
         if (host == null) {
-            Main.getLog().error("Host is null");
+            Main.log().error("Host is null");
         }
         if (database == null) {
-            Main.getLog().error("Database is null");
+            Main.log().error("Database is null");
         }
         if (username == null) {
-            Main.getLog().error("Username is null");
+            Main.log().error("Username is null");
         }
         if (password == null) {
-            Main.getLog().error("Password is null");
+            Main.log().error("Password is null");
         }
 
-        Main.getLog().log("Connecting to HOST: " + host + " on PORT: " + port + " FOR DATABASE " + database);
+        Main.log().log("Connecting to HOST: " + host + " on PORT: " + port + " FOR DATABASE " + database);
         config.setJdbcUrl("jdbc:mysql://" + host + ":" + port + "/" + database + "");
         config.setUsername(username);
         config.setPassword(password);
@@ -70,16 +70,16 @@ public class SQLPool {
                 connection.setAutoCommit(false);
                 function.acceptThrows(connection);
                 connection.commit();
-                Main.getLog().log("Successful database transaction");
+                Main.log().log("Successful database transaction");
                 return true;
             } catch (Exception e) {
-                Main.getLog().error("Rolled back database transaction");
+                Main.log().error("Rolled back database transaction");
                 connection.rollback();
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        Main.getLog().error("Unsuccessful database transaction");
+        Main.log().error("Unsuccessful database transaction");
         return false;
     }
 
@@ -87,7 +87,7 @@ public class SQLPool {
         try {
             ds.close();
         } catch (Exception e) {
-            Main.getLog().error("A SQLException was caught" + e);
+            Main.log().error("A SQLException was caught" + e);
         }
     }
 }

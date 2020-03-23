@@ -1,5 +1,6 @@
 package YourPluginName.Main;
 import YourPluginName.Storage.LogData;
+import YourPluginName.Storage.LogHandler;
 import YourPluginName.Storage.SQLPool;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -8,44 +9,30 @@ import java.io.File;
 
 public class Main extends JavaPlugin {
 
-    static {
-        //ConfigurationSerialization.registerClass(Nest.class, "Nest");
-    }
-
     private static JavaPlugin plugin;
     private static VertXLogger logger;
-    private static FileConfiguration logDataConfig, accDataConfig;
-    private static HashMap<String, TimeHandler> handlers;
+    private static TimeManager timeManager;
+
 
     public static VertXLogger log() {
         return logger;
     }
-
-    public static FileConfiguration getLogDataConfig() {
-        return logDataConfig;
-    }
-
-    public static FileConfiguration getAccDataConfig() {
-        return accDataConfig;
-    }
-
     public static JavaPlugin getPlugin() {
         return plugin;
     }
 
-    public static VertXLogger getLog() {
-        return logger;
+    public static TimeManager getTimeManager() {
+        return timeManager;
     }
 
     @Override
     public void onEnable() {
         plugin = this;
-        logger = new VertXLogger("VertXExamplePlugin");
+        logger = new VertXLogger("VertX_TimeLogger");
         createConfig();
 
-        LogData.setupTables("login_log").thenAccept((success) -> {
-
-        });
+        boolean usingDatabase = getConfig().getBoolean("use-database");
+        timeManager = new TimeManager("LOGINS");
 
     }
 
@@ -75,28 +62,6 @@ public class Main extends JavaPlugin {
             File userDataFiles = new File(getDataFolder() + File.separator + "UserData");
             if (!userDataFiles.exists()) {
                 userDataFiles.mkdirs();
-            }
-
-            //log of logins and logouts
-            File logFile = new File(userDataFiles, "log.yml");
-            if (!logFile.exists()) {
-                getLogger().info("log.yml not found, creating");
-                logFile.createNewFile();
-                logDataConfig = YamlConfiguration.loadConfiguration(logFile);
-                logDataConfig.set("created", System.currentTimeMillis());
-            } else {
-                logDataConfig = YamlConfiguration.loadConfiguration(logFile);
-            }
-
-            //acc of data e.g total time
-            File accFile = new File(userDataFiles, "general.yml");
-            if (!accFile.exists()) {
-                getLogger().info("general.yml not found, creating");
-                accFile.createNewFile();
-                accDataConfig = YamlConfiguration.loadConfiguration(accFile);
-                accDataConfig.set("created", System.currentTimeMillis());
-            } else {
-                accDataConfig = YamlConfiguration.loadConfiguration(logFile);
             }
 
         } catch (Exception e) {

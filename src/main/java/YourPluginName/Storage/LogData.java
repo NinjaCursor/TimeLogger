@@ -3,54 +3,32 @@ package YourPluginName.Storage;
 import org.bukkit.configuration.serialization.ConfigurationSerializable;
 import org.bukkit.configuration.serialization.SerializableAs;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
 @SerializableAs("LogData")
-public class LogData implements ConfigurationSerializable, VertXDataType {
+public class LogData implements ConfigurationSerializable {
 
-    private boolean logoutIsNull;
+    private SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMMMM yyyy HH:mm:ss.SSSZ");
+    private LogType logType;
     private UUID uuid;
-    private long loginTime, logoutTime;
-    private String type;
+    private long timeStamp;
 
-    private void setup(String type, UUID uuid, long loginTime) {
-        this.type = type;
+    public LogData(LogType logType, UUID uuid, long timeStamp) {
+        this.logType = logType;
         this.uuid = uuid;
-        this.loginTime = loginTime;
+        this.timeStamp = timeStamp;
     }
 
-    public LogData(String type, UUID uuid, long loginTime, long logoutTime) {
-        setup(type, uuid, loginTime);
-        this.logoutTime = logoutTime;
-        this.logoutIsNull = false;
+    public LogType getLogType() {
+        return logType;
     }
 
-    public LogData(String type, UUID uuid, long loginTime) {
-        setup(type, uuid, loginTime);
-        this.logoutIsNull = true;
-    }
-
-    public long getLoginTime() {
-        return loginTime;
-    }
-
-    public void setLoginTime(long loginTime) {
-        this.loginTime = loginTime;
-    }
-
-    public long getLogoutTime() {
-        return logoutTime;
-    }
-
-    public void setLogoutTime(long logoutTime) {
-        this.logoutTime = logoutTime;
-        this.logoutIsNull = false;
-    }
-
-    public boolean isLogoutIsNull() {
-        return logoutIsNull;
+    public long getTimeStamp() {
+        return timeStamp;
     }
 
     public UUID getUuid() {
@@ -61,15 +39,14 @@ public class LogData implements ConfigurationSerializable, VertXDataType {
     public Map<String, Object> serialize() {
         HashMap<String, Object> hashMap = new HashMap<>();
         hashMap.put("uuid", getUuid());
-        hashMap.put("login", getLoginTime());
-        hashMap.put("logout", getLogoutTime());
-        hashMap.put("type", this.type);
+        hashMap.put("time_stamp_epoch", getTimeStamp());
+        hashMap.put("time_stamp_formatted", simpleDateFormat.format(new Date(getTimeStamp())));
+        hashMap.put("description", logType.toString());
         return hashMap;
     }
 
     public static LogData deserialize(Map<String, Object> args) {
-        LogData logData = new LogData((String) args.get("type"), (UUID) args.get("uuid"), (long) args.get("login"), (long) args.get("logout"));
-        return logData;
+        return new LogData(LogType.valueOf((String) args.get("description")), UUID.fromString((String) args.get("uuid")), (long) args.get("time_stamp_epoch"));
     }
 
 }
