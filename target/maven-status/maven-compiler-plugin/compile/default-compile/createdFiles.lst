@@ -15,14 +15,17 @@ YourPluginName\Storage\DatabaseTable$ColumnWrapper.class
 YourPluginName\Storage\LogHandler$LogLocalTools.class
 YourPluginName\Storage\GeneralDataTools.class
 YourPluginName\Storage\AccumulatedHandler$DatabaseTools$1.class
+YourPluginName\Storage\AccumulatedHandler$LocalTools$1.class
 YourPluginName\Commands\ExampleCommand.class
 YourPluginName\Listeners\LogInListener.class
+YourPluginName\Storage\AccumulatedHandler$LocalTools$1$1.class
 YourPluginName\Storage\SQLPool.class
 YourPluginName\Storage\AccumulatedHandler$DatabaseTools.class
 YourPluginName\Storage\VertxDataType.class
 YourPluginName\Storage\LocalFileTools.class
 YourPluginName\Commands\CommandAsset.class
 YourPluginName\Main\TimeManager$1.class
+YourPluginName\Storage\AccumulatedHandler$LocalTools$2.class
 YourPluginName\Storage\LogHandler.class
 YourPluginName\Storage\LogHandler$LogLocalTools$3.class
 YourPluginName\Storage\AccumulatedHandler$LocalTools.class

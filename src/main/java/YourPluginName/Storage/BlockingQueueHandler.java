@@ -27,6 +27,7 @@ public class BlockingQueueHandler {
                 }
             }
         });
+        start();
     }
 
     public void start() {

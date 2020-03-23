@@ -25,20 +25,20 @@ public class TimePlayer {
         this.log = log;
     }
 
-    public LogData start() {
+    public LogData start(long id) {
         accData.start();
-        LogData logData = new LogData(LogType.START, uuid, System.currentTimeMillis());
+        LogData logData = new LogData(LogType.START, uuid, System.currentTimeMillis(), id);
         log.add(logData);
         return logData;
     }
 
     public LogData getUpdateLog() {
-        return new LogData(LogType.UPDATE_ACTIVE, uuid, System.currentTimeMillis());
+        return new LogData(LogType.UPDATE_ACTIVE, uuid, System.currentTimeMillis(), log.get(log.size()-1).getId());
     }
 
-    public LogData stop() {
+    public LogData stop(long id) {
         accData.stop();
-        LogData logData = new LogData(LogType.STOP, uuid, System.currentTimeMillis());
+        LogData logData = new LogData(LogType.STOP, uuid, System.currentTimeMillis(), id);
         log.add(logData);
         return logData;
     }

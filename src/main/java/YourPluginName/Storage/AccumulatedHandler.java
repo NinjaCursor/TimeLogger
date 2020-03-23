@@ -1,13 +1,16 @@
 package YourPluginName.Storage;
 
 import YourPluginName.Main.Main;
+import org.bukkit.Bukkit;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.*;
 import java.util.concurrent.CompletableFuture;
+import java.util.stream.Collectors;
 
 public class AccumulatedHandler implements GeneralDataTools<AccumulatedData> {
 
@@ -94,18 +97,52 @@ public class AccumulatedHandler implements GeneralDataTools<AccumulatedData> {
 
     public class LocalTools extends LocalFileTools<AccumulatedData> {
 
+        int timeBeforeStoring = 60*20;
+
         public LocalTools(String fileName) {
             super(fileName);
         }
 
         @Override
         public boolean setup(String name) {
-            return false;
+            boolean success = setupFile(fileName);
+
+            if (success) {
+                Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getPlugin(), new Runnable() {
+                    @Override
+                    public void run() {
+                        blockingQueueHandler.addRunnable(new SequentialRunnable() {
+                            @Override
+                            boolean run() {
+                                try {
+                                    saveToFile();
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+                                return true;
+                            }
+                        });
+                    }
+                }, timeBeforeStoring, timeBeforeStoring);
+            }
+
+            return setupFile(fileName);
         }
 
         @Override
         public CompletableFuture<List<AccumulatedData>> getData() throws Exception {
-            return null;
+            SequentialRunnable runnable = new SequentialRunnable<List<AccumulatedData>>() {
+                @Override
+                boolean run() {
+                    List<AccumulatedData> loadedData = dataFile.getMapList("LogData").stream().map(serializedData -> AccumulatedData.deserialize((Map<String, Object>)serializedData)).collect(Collectors.toList());
+                    completableFuture.complete(loadedData);
+                    return true;
+                }
+            };
+
+            blockingQueueHandler.addRunnable(runnable);
+
+            return runnable.getFuture();
         }
 
         @Override
@@ -124,7 +161,9 @@ public class AccumulatedHandler implements GeneralDataTools<AccumulatedData> {
         } else {
             tools = new LocalTools(newName);
         }
-        return tools.setup(newName);
+        boolean success = tools.setup(newName);
+        Main.log().log(String.format("AccumulatedHandler Succeeded? " + success));
+        return success;
     }
 
     @Override

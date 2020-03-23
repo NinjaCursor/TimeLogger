@@ -2,25 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="481a7d82-8e6d-4c1d-8eef-7520c7c1c4ab" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/YourPluginName/Main/TimeManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/YourPluginName/Main/TimePlayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/YourPluginName/Storage/AccumulatedHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/YourPluginName/Storage/LogType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/YourPluginName/Listeners/LogInListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/YourPluginName/Listeners/LogInListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/YourPluginName/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/YourPluginName/Main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/YourPluginName/Main/TimeHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/YourPluginName/Storage/AccumulatedData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/YourPluginName/Storage/AccumulatedData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/YourPluginName/Main/TimeManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/YourPluginName/Main/TimeManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/YourPluginName/Main/TimePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/YourPluginName/Main/TimePlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/YourPluginName/Storage/AccumulatedHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/YourPluginName/Storage/AccumulatedHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/YourPluginName/Storage/BlockingQueueHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/YourPluginName/Storage/BlockingQueueHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/YourPluginName/Storage/DatabaseTools.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/YourPluginName/Storage/GeneralDataTools.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/YourPluginName/Storage/GeneralDataTools.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/YourPluginName/Storage/DatabaseTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/YourPluginName/Storage/DatabaseTable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/YourPluginName/Storage/LocalFileTools.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/YourPluginName/Storage/LocalFileTools.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/YourPluginName/Storage/LogData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/YourPluginName/Storage/LogData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/YourPluginName/Storage/LogHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/YourPluginName/Storage/LogHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/YourPluginName/Storage/SQLPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/YourPluginName/Storage/SQLPool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/YourPluginName/Storage/SequentialRunnable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/YourPluginName/Storage/SequentialRunnable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TimeLogger-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/TimeLogger-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/YourPluginName/Main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/YourPluginName/Main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/YourPluginName/Main/TimeManager$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/YourPluginName/Main/TimeManager$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/YourPluginName/Main/TimeManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/YourPluginName/Main/TimeManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/YourPluginName/Main/TimePlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/YourPluginName/Main/TimePlayer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/YourPluginName/Storage/AccumulatedHandler$DatabaseTools$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/YourPluginName/Storage/AccumulatedHandler$DatabaseTools$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/YourPluginName/Storage/AccumulatedHandler$DatabaseTools$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/YourPluginName/Storage/AccumulatedHandler$DatabaseTools$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/YourPluginName/Storage/AccumulatedHandler$DatabaseTools.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/YourPluginName/Storage/AccumulatedHandler$DatabaseTools.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/YourPluginName/Storage/AccumulatedHandler$LocalTools.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/YourPluginName/Storage/AccumulatedHandler$LocalTools.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/YourPluginName/Storage/AccumulatedHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/YourPluginName/Storage/AccumulatedHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/YourPluginName/Storage/BlockingQueueHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/YourPluginName/Storage/BlockingQueueHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/YourPluginName/Storage/DatabaseTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/YourPluginName/Storage/DatabaseTable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/YourPluginName/Storage/LocalFileTools$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/YourPluginName/Storage/LocalFileTools$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/YourPluginName/Storage/LocalFileTools.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/YourPluginName/Storage/LocalFileTools.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/YourPluginName/Storage/LogData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/YourPluginName/Storage/LogData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/YourPluginName/Storage/LogHandler$LogLocalTools$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/YourPluginName/Storage/LogHandler$LogLocalTools$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/YourPluginName/Storage/LogHandler$LogLocalTools.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/YourPluginName/Storage/LogHandler$LogLocalTools.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/YourPluginName/Storage/LogHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/YourPluginName/Storage/LogHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +94,7 @@
       <workItem from="1581710382217" duration="808000" />
       <workItem from="1581728201216" duration="7292000" />
       <workItem from="1581816232574" duration="15556000" />
-      <workItem from="1584732169467" duration="33313000" />
+      <workItem from="1584732169467" duration="40306000" />
     </task>
     <servers />
   </component>
@@ -105,10 +116,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1700" y="459" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1581881307521" />
-    <state x="533" y="198" key="SettingsEditor" timestamp="1584906627427">
+    <state x="533" y="198" key="SettingsEditor" timestamp="1584923911643">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="533" y="198" key="SettingsEditor/2560.0.1280.974/0.0.2048.1112@0.0.2048.1112" timestamp="1584906627427" />
+    <state x="533" y="198" key="SettingsEditor/2560.0.1280.974/0.0.2048.1112@0.0.2048.1112" timestamp="1584923911643" />
     <state x="1302" y="428" key="new project wizard" timestamp="1581711189845">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

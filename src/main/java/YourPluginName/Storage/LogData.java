@@ -16,11 +16,13 @@ public class LogData implements ConfigurationSerializable {
     private LogType logType;
     private UUID uuid;
     private long timeStamp;
+    private long id;
 
-    public LogData(LogType logType, UUID uuid, long timeStamp) {
+    public LogData(LogType logType, UUID uuid, long timeStamp, long id) {
         this.logType = logType;
         this.uuid = uuid;
         this.timeStamp = timeStamp;
+        this.id = id;
     }
 
     public LogType getLogType() {
@@ -35,18 +37,23 @@ public class LogData implements ConfigurationSerializable {
         return uuid;
     }
 
+    public long getId() {
+        return this.id;
+    }
+
     @Override
     public Map<String, Object> serialize() {
         HashMap<String, Object> hashMap = new HashMap<>();
-        hashMap.put("uuid", getUuid());
+        hashMap.put("uuid", getUuid().toString());
         hashMap.put("time_stamp_epoch", getTimeStamp());
         hashMap.put("time_stamp_formatted", simpleDateFormat.format(new Date(getTimeStamp())));
         hashMap.put("description", logType.toString());
+        hashMap.put("id", this.id);
         return hashMap;
     }
 
     public static LogData deserialize(Map<String, Object> args) {
-        return new LogData(LogType.valueOf((String) args.get("description")), UUID.fromString((String) args.get("uuid")), (long) args.get("time_stamp_epoch"));
+        return new LogData(LogType.valueOf((String) args.get("description")), UUID.fromString((String) args.get("uuid")), (long) args.get("time_stamp_epoch"), (long) args.get("id"));
     }
 
 }

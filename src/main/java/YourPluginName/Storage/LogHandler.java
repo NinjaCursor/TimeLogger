@@ -53,7 +53,7 @@ public class LogHandler implements GeneralDataTools<LogData> {
 
     private static class LogLocalTools extends LocalFileTools<LogData> {
 
-        private final String fileName = "logData";
+
         private final int timeBeforeStoring = 20*60;
 
         public LogLocalTools() {
@@ -110,10 +110,12 @@ public class LogHandler implements GeneralDataTools<LogData> {
 
         @Override
         public void update(LogData data) throws Exception {
+            Main.log().log("Update Marker 2");
             SequentialRunnable runnable = new SequentialRunnable() {
                 @Override
                 boolean run() {
-                dataFile.set(data.getUuid().toString(), data);
+                Main.log().log("Update at Runnable");
+                dataFile.set(data.getId() + "", data);
                 return true;
                 }
             };
@@ -130,7 +132,10 @@ public class LogHandler implements GeneralDataTools<LogData> {
             usedStorageTools = new LogDatabaseTools();
         else
             usedStorageTools = new LogLocalTools();
-        return usedStorageTools.setup(newName);
+
+        boolean success = usedStorageTools.setup(newName);
+        Main.log().log(String.format("loginHandler Succeeded? " + success));
+        return success;
     }
 
     @Override
@@ -140,6 +145,7 @@ public class LogHandler implements GeneralDataTools<LogData> {
 
     @Override
     public void update(LogData data) throws Exception {
+        Main.log().log("Update at log handler");
         usedStorageTools.update(data);
     }
 

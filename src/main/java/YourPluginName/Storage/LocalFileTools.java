@@ -12,7 +12,7 @@ public abstract class LocalFileTools<T> implements GeneralDataTools<T>{
     protected FileConfiguration dataFile;
     private File file;
     protected BlockingQueueHandler blockingQueueHandler;
-    private String fileName;
+    protected final String fileName;
 
     public LocalFileTools(String fileName) {
         this.fileName = fileName;
@@ -55,6 +55,7 @@ public abstract class LocalFileTools<T> implements GeneralDataTools<T>{
             @Override
             boolean run() {
                 try {
+                    Main.log().log("SAVING TO FILE...");
                     dataFile.save(file);
                 } catch (IOException e) {
                     e.printStackTrace();

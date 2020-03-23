@@ -158,6 +158,7 @@ public class DatabaseTable {
             statement.executeUpdate("CREATE TABLE " + getName() + "(" + sql + ")");
         } catch (SQLException e) {
             e.printStackTrace();
+            Bukkit.getLogger().info("Failed to create new table");
             return false;
         }
 
