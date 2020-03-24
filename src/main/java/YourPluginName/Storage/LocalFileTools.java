@@ -9,7 +9,6 @@ import org.bukkit.configuration.serialization.ConfigurationSerializable;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Function;
@@ -80,15 +79,19 @@ public class LocalFileTools<T extends ConfigurationSerializable> {
             @Override
             public boolean run() {
                 dataConfig.set(key, data);
+                Main.log().log("We did it!!!!!!!!!");
                 return true;
             }
         };
+        blockingQueueHandler.addRunnable(runnable);
     }
 
     public CompletableFuture<ArrayList<T>> getData(Function<Map<String,Object>, T> deserializer, String path) {
         SequentialRunnable<ArrayList<T>> runnable = new SequentialRunnable() {
             @Override
             public boolean run() {
+
+                Main.log().log("We did it!!!!!!!!! Yeah we just loaded DATA! wahoo");
                 completableFuture.complete(dataConfig.getMapList(path).stream().map(serializedData -> deserializer.apply((Map<String, Object>)serializedData)).collect(Collectors.toList()));
                 return true;
             }

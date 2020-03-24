@@ -1,4 +1,5 @@
 C:\Users\jacob\IdeaProjects\TimeLogger\src\main\java\YourPluginName\Storage\Log\LogLocalTools.java
+C:\Users\jacob\IdeaProjects\TimeLogger\src\main\java\YourPluginName\Storage\Summary\AccumulatedLocal.java
 C:\Users\jacob\IdeaProjects\TimeLogger\src\main\java\YourPluginName\Listeners\LogInListener.java
 C:\Users\jacob\IdeaProjects\TimeLogger\src\main\java\YourPluginName\Storage\BlockingQueueHandler.java
 C:\Users\jacob\IdeaProjects\TimeLogger\src\main\java\YourPluginName\Storage\DatabaseTable.java
@@ -10,6 +11,7 @@ C:\Users\jacob\IdeaProjects\TimeLogger\src\main\java\YourPluginName\Storage\Log\
 C:\Users\jacob\IdeaProjects\TimeLogger\src\main\java\YourPluginName\Storage\CrashProtection\DatabaseCrashTools.java
 C:\Users\jacob\IdeaProjects\TimeLogger\src\main\java\YourPluginName\Storage\CrashProtection\CrashData.java
 C:\Users\jacob\IdeaProjects\TimeLogger\src\main\java\YourPluginName\Main\Main.java
+C:\Users\jacob\IdeaProjects\TimeLogger\src\main\java\YourPluginName\Storage\Summary\AccumulatedDatabase.java
 C:\Users\jacob\IdeaProjects\TimeLogger\src\main\java\YourPluginName\Storage\ThrowingConsumer.java
 C:\Users\jacob\IdeaProjects\TimeLogger\src\main\java\YourPluginName\Commands\ExampleCommand.java
 C:\Users\jacob\IdeaProjects\TimeLogger\src\main\java\YourPluginName\Storage\Log\LogType.java

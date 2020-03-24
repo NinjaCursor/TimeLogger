@@ -6,16 +6,13 @@ import java.io.File;
 import java.util.*;
 import java.util.concurrent.CompletableFuture;
 
-public class LogLocalTools implements GeneralDataTools<LogData, ArrayList<LogData>> {
+//todo extend LocalFileTools instead of instancing
+public class LogLocalTools extends LocalFileTools<LogData> implements GeneralDataTools<LogData, ArrayList<LogData>> {
 
     private final int timeBeforeStoring = 20*20;
-    private LocalFileTools<LogData> finalStorage;
-    private File homeDirectory;
-    private String name;
 
-    public LogLocalTools(File homeDirectory, String name) {
-        this.homeDirectory = homeDirectory;
-        this.name = name;
+    public LogLocalTools(File homeDirectory, String name) throws Exception {
+        super(name, homeDirectory, 20 * 60);
     }
 
     /* setup() sets up the local file storage
@@ -24,15 +21,7 @@ public class LogLocalTools implements GeneralDataTools<LogData, ArrayList<LogDat
      * returns: success of setup
      */
     @Override
-    public boolean setup() {
-        try {
-            finalStorage = new LocalFileTools(name, homeDirectory, timeBeforeStoring);
-            return true;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return false;
-        }
-    }
+    public boolean setup() { return true; }
 
     public HashMap<UUID, ArrayList<LogData>> getSortedData(ArrayList<LogData> logDataArrayList) {
         HashMap<UUID, ArrayList<LogData>> uuidToLogs = new HashMap<>();
@@ -60,16 +49,12 @@ public class LogLocalTools implements GeneralDataTools<LogData, ArrayList<LogDat
 
     @Override
     public CompletableFuture<ArrayList<LogData>> getData(){
-        CompletableFuture<ArrayList<LogData>> finalStorageFuture = finalStorage.getData(((map -> {
-            return LogData.deserialize(map);
-        })), "LogData");
-
-        return finalStorageFuture;
+        return getData((map -> LogData.deserialize(map)), "LogData");
     }
 
     @Override
     public void update(LogData data) {
-        finalStorage.set(data.getId() + "", data);
+        set(data.getId() + "", data);
     }
 
 }

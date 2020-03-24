@@ -24,8 +24,15 @@ public class LogHandler implements GeneralDataTools<LogData, ArrayList<LogData>>
         String newName = name + "Log";
         if (Main.getPlugin().getConfig().getBoolean("use-database"))
             usedStorageTools = new LogDatabaseTools();
-        else
-            usedStorageTools = new LogLocalTools(homeDirectory, newName);
+        else {
+            try {
+                usedStorageTools = new LogLocalTools(homeDirectory, newName);
+                return true;
+            } catch (Exception e) {
+                e.printStackTrace();
+                return false;
+            }
+        }
 
         boolean success = usedStorageTools.setup();
         Main.log().log(String.format("loginHandler Succeeded? " + success));

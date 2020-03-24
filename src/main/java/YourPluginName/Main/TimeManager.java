@@ -30,7 +30,7 @@ public class TimeManager {
 
         timePlayers = new HashMap<>();
         logHandler = new LogHandler(name, homeDirectory);
-        accHandler = new AccumulatedHandler();
+        accHandler = new AccumulatedHandler(homeDirectory);
         crashHandler = new CrashProtectionHandler(name, homeDirectory);
 
         if (logHandler.setup() && accHandler.setup() && crashHandler.setup()) {
@@ -79,6 +79,7 @@ public class TimeManager {
     }
 
     public void start(UUID uuid) {
+        Main.log().log("Start!");
         lastID++;
         TimePlayer timePlayer = getTimePlayer(uuid);
         try {
@@ -91,6 +92,8 @@ public class TimeManager {
     }
 
     public void stop(UUID uuid) {
+
+        Main.log().log("Stop!");
         TimePlayer timePlayer = getTimePlayer(uuid);
         lastID++;
         try {

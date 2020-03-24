@@ -6,6 +6,7 @@ YourPluginName\Storage\CrashProtection\CrashData.class
 YourPluginName\Storage\SequentialRunnable.class
 YourPluginName\Storage\Log\LogHandler.class
 YourPluginName\Storage\Response.class
+YourPluginName\Storage\Summary\AccumulatedLocal.class
 YourPluginName\Main\TimePlayer.class
 YourPluginName\Main\VertXLogger.class
 YourPluginName\Storage\Log\LogType.class
@@ -21,6 +22,7 @@ YourPluginName\Storage\Log\LogDatabaseTools.class
 YourPluginName\Storage\VertxDataType.class
 YourPluginName\Storage\LocalFileTools$2.class
 YourPluginName\Storage\LocalFileTools.class
+YourPluginName\Storage\Summary\AccumulatedDatabase.class
 YourPluginName\Commands\CommandAsset.class
 YourPluginName\Storage\Log\LogLocalTools.class
 YourPluginName\Storage\CrashProtection\CrashProtectionHandler.class

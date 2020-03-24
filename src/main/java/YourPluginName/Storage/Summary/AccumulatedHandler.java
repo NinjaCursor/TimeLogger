@@ -5,6 +5,7 @@ import YourPluginName.Storage.*;
 import YourPluginName.Storage.Summary.AccumulatedData;
 import org.bukkit.Bukkit;
 
+import java.io.File;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -172,9 +173,21 @@ public class AccumulatedHandler implements GeneralDataTools<AccumulatedData, Acc
         return success;
     }
 
+    private File homeDirectory;
+
+    public AccumulatedHandler(File homeDirectory) {
+        this.homeDirectory = homeDirectory;
+    }
+
     @Override
     public boolean setup() {
-        return false;
+        try {
+            tools = new AccumulatedLocal("AccumulatedDataFile", homeDirectory, 60*20);
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 
     @Override
