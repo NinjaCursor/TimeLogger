@@ -1,5 +1,6 @@
 package YourPluginName.Storage.Log;
 
+import YourPluginName.Storage.KeyValuePair;
 import org.bukkit.configuration.serialization.ConfigurationSerializable;
 import org.bukkit.configuration.serialization.SerializableAs;
 
@@ -10,12 +11,12 @@ import java.util.Map;
 import java.util.UUID;
 
 @SerializableAs("LogData")
-public class LogData implements ConfigurationSerializable, Comparable<LogData> {
+public class LogData implements ConfigurationSerializable, Comparable<LogData>, KeyValuePair<Long, LogData> {
 
     private SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMMMM yyyy HH:mm:ss.SSSZ");
     private LogType logType;
-    private UUID uuid;
     private long timeStamp;
+    private UUID uuid;
     private long id;
 
     public LogData(LogType logType, UUID uuid, long timeStamp, long id) {
@@ -64,5 +65,15 @@ public class LogData implements ConfigurationSerializable, Comparable<LogData> {
             return 1;
         else
             return 0;
+    }
+
+    @Override
+    public Long getKey() {
+        return getId();
+    }
+
+    @Override
+    public LogData getValue() {
+        return this;
     }
 }

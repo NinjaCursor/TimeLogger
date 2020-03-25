@@ -1,14 +1,13 @@
-C:\Users\jacob\IdeaProjects\TimeLogger\src\main\java\YourPluginName\Storage\Log\LogLocalTools.java
-C:\Users\jacob\IdeaProjects\TimeLogger\src\main\java\YourPluginName\Storage\Summary\AccumulatedLocal.java
 C:\Users\jacob\IdeaProjects\TimeLogger\src\main\java\YourPluginName\Listeners\LogInListener.java
 C:\Users\jacob\IdeaProjects\TimeLogger\src\main\java\YourPluginName\Storage\BlockingQueueHandler.java
 C:\Users\jacob\IdeaProjects\TimeLogger\src\main\java\YourPluginName\Storage\DatabaseTable.java
 C:\Users\jacob\IdeaProjects\TimeLogger\src\main\java\YourPluginName\Commands\CommandAsset.java
 C:\Users\jacob\IdeaProjects\TimeLogger\src\main\java\YourPluginName\Storage\Log\LogData.java
+C:\Users\jacob\IdeaProjects\TimeLogger\src\main\java\YourPluginName\Storage\KeyValuePair.java
 C:\Users\jacob\IdeaProjects\TimeLogger\src\main\java\YourPluginName\Commands\AllowableUserType.java
 C:\Users\jacob\IdeaProjects\TimeLogger\src\main\java\YourPluginName\Storage\CrashProtection\CrashProtectionHandler.java
+C:\Users\jacob\IdeaProjects\TimeLogger\src\main\java\YourPluginName\Storage\UpdateEvent.java
 C:\Users\jacob\IdeaProjects\TimeLogger\src\main\java\YourPluginName\Storage\Log\LogHandler.java
-C:\Users\jacob\IdeaProjects\TimeLogger\src\main\java\YourPluginName\Storage\CrashProtection\DatabaseCrashTools.java
 C:\Users\jacob\IdeaProjects\TimeLogger\src\main\java\YourPluginName\Storage\CrashProtection\CrashData.java
 C:\Users\jacob\IdeaProjects\TimeLogger\src\main\java\YourPluginName\Main\Main.java
 C:\Users\jacob\IdeaProjects\TimeLogger\src\main\java\YourPluginName\Storage\Summary\AccumulatedDatabase.java
@@ -25,7 +24,5 @@ C:\Users\jacob\IdeaProjects\TimeLogger\src\main\java\YourPluginName\Main\VertXLo
 C:\Users\jacob\IdeaProjects\TimeLogger\src\main\java\YourPluginName\Storage\Summary\AccumulatedHandler.java
 C:\Users\jacob\IdeaProjects\TimeLogger\src\main\java\YourPluginName\Storage\Log\LogDatabaseTools.java
 C:\Users\jacob\IdeaProjects\TimeLogger\src\main\java\YourPluginName\Main\TimeManager.java
-C:\Users\jacob\IdeaProjects\TimeLogger\src\main\java\YourPluginName\Storage\CrashProtection\LocalCrashTools.java
 C:\Users\jacob\IdeaProjects\TimeLogger\src\main\java\YourPluginName\Storage\LocalFileTools.java
-C:\Users\jacob\IdeaProjects\TimeLogger\src\main\java\YourPluginName\Main\TimeableEvent.java
 C:\Users\jacob\IdeaProjects\TimeLogger\src\main\java\YourPluginName\Storage\GeneralDataTools.java

@@ -1,53 +1,42 @@
 package YourPluginName.Storage.Log;
 
 import YourPluginName.Main.Main;
-import YourPluginName.Main.TimePlayer;
 import YourPluginName.Storage.GeneralDataTools;
+import YourPluginName.Storage.LocalFileTools;
 
 import java.io.File;
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.concurrent.CompletableFuture;
 
-public class LogHandler implements GeneralDataTools<LogData, ArrayList<LogData>> {
+public class LogHandler implements GeneralDataTools<Long, LogData> {
 
-    private GeneralDataTools<LogData, ArrayList<LogData>> usedStorageTools;
-    private String name;
-    private File homeDirectory;
+    private GeneralDataTools<Long, LogData> tools;
 
-    public LogHandler(String name, File homeDirectory) {
-        this.name = name;
-        this.homeDirectory = homeDirectory;
+    public LogHandler(File homeDirectory) {
+        tools = new LocalFileTools<Long, LogData>("Log", homeDirectory, "Log", (string) -> Long.parseLong(string));
     }
 
     @Override
     public boolean setup() {
-        String newName = name + "Log";
-        if (Main.getPlugin().getConfig().getBoolean("use-database"))
-            usedStorageTools = new LogDatabaseTools();
-        else {
-            try {
-                usedStorageTools = new LogLocalTools(homeDirectory, newName);
-                return true;
-            } catch (Exception e) {
-                e.printStackTrace();
-                return false;
-            }
-        }
-
-        boolean success = usedStorageTools.setup();
+        boolean success = tools.setup();
         Main.log().log(String.format("loginHandler Succeeded? " + success));
         return success;
     }
 
     @Override
-    public CompletableFuture<ArrayList<LogData>> getData() {
-        return usedStorageTools.getData();
+    public CompletableFuture<HashMap<Long, LogData>> getData() {
+        return tools.getData();
     }
 
     @Override
     public void update(LogData data) {
         Main.log().log("Update at log handler");
-        usedStorageTools.update(data);
+        tools.update(data);
+    }
+
+    @Override
+    public Runnable getUpdateRunnable() {
+        return tools.getUpdateRunnable();
     }
 
 }

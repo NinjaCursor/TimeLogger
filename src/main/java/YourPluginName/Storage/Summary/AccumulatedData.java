@@ -1,16 +1,14 @@
 package YourPluginName.Storage.Summary;
-
+import YourPluginName.Storage.KeyValuePair;
 import org.bukkit.configuration.serialization.ConfigurationSerializable;
 import org.bukkit.configuration.serialization.SerializableAs;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
-import java.util.function.Function;
 import java.util.function.Predicate;
 
 @SerializableAs("AccumulatedData")
-public class AccumulatedData implements ConfigurationSerializable {
+public class AccumulatedData implements ConfigurationSerializable, KeyValuePair<UUID, AccumulatedData> {
 
     private long lastStartTime;
     private boolean active;
@@ -79,7 +77,7 @@ public class AccumulatedData implements ConfigurationSerializable {
     @Override
     public Map<String, Object> serialize() {
         HashMap<String, Object> hashMap = new HashMap<>();
-        hashMap.put("uuid", getUuid());
+        hashMap.put("uuid", getUuid().toString());
         hashMap.put("total", getTotal());
         hashMap.put("punched_in_count", getStarts());
         hashMap.put("first_punch_in", getFirstLoginTimeStamp());
@@ -88,10 +86,10 @@ public class AccumulatedData implements ConfigurationSerializable {
 
     public static AccumulatedData deserialize(Map<String, Object> args) {
         AccumulatedData aData = new AccumulatedData(
-                (UUID) args.get("uuid"),
-                (long) args.get("total"),
-                (long) args.get("punched_in_count"),
-                (long) args.get("first_punch_in")
+                UUID.fromString((String)args.get("uuid")),
+                ((Number) args.get("total")).longValue(),
+                ((Number) args.get("punched_in_count")).longValue(),
+                ((Number) args.get("first_punch_in")).longValue()
         );
         return aData;
     }
@@ -100,4 +98,13 @@ public class AccumulatedData implements ConfigurationSerializable {
         return (accData) -> accData.isActive();
     }
 
+    @Override
+    public UUID getKey() {
+        return getUuid();
+    }
+
+    @Override
+    public AccumulatedData getValue() {
+        return this;
+    }
 }

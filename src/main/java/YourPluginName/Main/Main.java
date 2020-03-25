@@ -1,5 +1,7 @@
 package YourPluginName.Main;
+import YourPluginName.Commands.ExampleCommand;
 import YourPluginName.Listeners.LogInListener;
+import YourPluginName.Storage.CrashProtection.CrashData;
 import YourPluginName.Storage.Summary.AccumulatedData;
 import YourPluginName.Storage.Log.LogData;
 import YourPluginName.Storage.SQLPool;
@@ -18,6 +20,7 @@ public class Main extends JavaPlugin {
     static {
         ConfigurationSerialization.registerClass(LogData.class);
         ConfigurationSerialization.registerClass(AccumulatedData.class);
+        ConfigurationSerialization.registerClass(CrashData.class);
     }
 
     public static VertXLogger log() {
@@ -34,7 +37,7 @@ public class Main extends JavaPlugin {
     @Override
     public void onEnable() {
         plugin = this;
-        logger = new VertXLogger("VertX_TimeLogger");
+        logger = new VertXLogger("TimeLogger");
         createConfig();
 
         boolean usingDatabase = getConfig().getBoolean("use-database");
@@ -43,6 +46,8 @@ public class Main extends JavaPlugin {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        getCommand("example-command").setExecutor(new ExampleCommand("example-command", "time.total"));
 
         getServer().getPluginManager().registerEvents(new LogInListener(), this);
 

@@ -15,7 +15,7 @@ import java.util.*;
 import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 
-public class AccumulatedHandler implements GeneralDataTools<AccumulatedData, AccumulatedData> {
+public class AccumulatedHandler implements GeneralDataTools<UUID, AccumulatedData> {
 
 //    public class DatabaseTools implements GeneralDataTools<AccumulatedData, AccumulatedData> {
 //
@@ -161,42 +161,27 @@ public class AccumulatedHandler implements GeneralDataTools<AccumulatedData, Acc
 
     private GeneralDataTools tools;
 
-    public boolean setup(String name) {
-        String newName = name + "Accumulator";
-        if (Main.getPlugin().getConfig().getBoolean("using-database")) {
-            //tools = new DatabaseTools(newName);
-        } else {
-            //tools = new LocalTools(newName);
-        }
-        boolean success = false;//tools.setup(newName);
-        Main.log().log(String.format("AccumulatedHandler Succeeded? " + success));
-        return success;
-    }
-
-    private File homeDirectory;
-
     public AccumulatedHandler(File homeDirectory) {
-        this.homeDirectory = homeDirectory;
+        tools = new LocalFileTools("Summary", homeDirectory, "Summary", (string1) -> UUID.fromString((String) string1));
     }
 
     @Override
     public boolean setup() {
-        try {
-            tools = new AccumulatedLocal("AccumulatedDataFile", homeDirectory, 60*20);
-            return true;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return false;
-        }
+        return tools.setup();
     }
 
     @Override
-    public CompletableFuture<AccumulatedData> getData() {
+    public CompletableFuture<HashMap<UUID, AccumulatedData>> getData() {
         return tools.getData();
     }
 
     @Override
     public void update(AccumulatedData data) {
         tools.update(data);
+    }
+
+    @Override
+    public Runnable getUpdateRunnable() {
+        return tools.getUpdateRunnable();
     }
 }

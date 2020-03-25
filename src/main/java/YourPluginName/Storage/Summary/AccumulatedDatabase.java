@@ -2,6 +2,7 @@ package YourPluginName.Storage.Summary;
 
 import YourPluginName.Storage.GeneralDataTools;
 
+import java.util.HashMap;
 import java.util.concurrent.CompletableFuture;
 
 public class AccumulatedDatabase implements GeneralDataTools<AccumulatedData, AccumulatedData> {
@@ -12,12 +13,17 @@ public class AccumulatedDatabase implements GeneralDataTools<AccumulatedData, Ac
     }
 
     @Override
-    public CompletableFuture<AccumulatedData> getData() {
+    public CompletableFuture<HashMap<AccumulatedData, AccumulatedData>> getData() {
         return null;
     }
 
     @Override
     public void update(AccumulatedData data) {
 
+    }
+
+    @Override
+    public Runnable getUpdateRunnable() {
+        return null;
     }
 }
