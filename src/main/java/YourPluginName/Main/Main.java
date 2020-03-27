@@ -1,7 +1,8 @@
 package YourPluginName.Main;
 import YourPluginName.Commands.ExampleCommand;
 import YourPluginName.Listeners.LogInListener;
-import YourPluginName.Storage.CrashProtection.CrashData;
+import YourPluginName.Storage.ServerLog.ServerLogData;
+import YourPluginName.Storage.ServerLog.ServerLogHandler;
 import YourPluginName.Storage.Summary.AccumulatedData;
 import YourPluginName.Storage.Log.LogData;
 import YourPluginName.Storage.SQLPool;
@@ -16,11 +17,12 @@ public class Main extends JavaPlugin {
     private static JavaPlugin plugin;
     private static VertXLogger logger;
     private static TimeManager timeManager;
+    private static ServerLogHandler serverLogHandler;
 
     static {
         ConfigurationSerialization.registerClass(LogData.class);
         ConfigurationSerialization.registerClass(AccumulatedData.class);
-        ConfigurationSerialization.registerClass(CrashData.class);
+        ConfigurationSerialization.registerClass(ServerLogData.class);
     }
 
     public static VertXLogger log() {
@@ -33,6 +35,9 @@ public class Main extends JavaPlugin {
     public static TimeManager getTimeManager() {
         return timeManager;
     }
+    public static ServerLogHandler getServerLog() {
+        return serverLogHandler;
+    }
 
     @Override
     public void onEnable() {
@@ -40,16 +45,45 @@ public class Main extends JavaPlugin {
         logger = new VertXLogger("TimeLogger");
         createConfig();
 
-        boolean usingDatabase = getConfig().getBoolean("use-database");
-        try {
-            timeManager = new TimeManager("logins");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        serverLogHandler = new ServerLogHandler(null);
+
+        serverLogHandler.setup().thenAccept((success) -> {
+            Main.log().log("11111111111111111111111111111");
+            Main.log().log("11111111111111111111111111111");
+            Main.log().log("11111111111111111111111111111");
+            Main.log().log("11111111111111111111111111111");
+            Main.log().log("11111111111111111111111111111");
+            Main.log().log("11111111111111111111111111111");
+            Main.log().log("11111111111111111111111111111");
+            Main.log().log("11111111111111111111111111111");
+            Main.log().log("11111111111111111111111111111");
+            Main.log().log("11111111111111111111111111111");
+            Main.log().log("11111111111111111111111111111");
+            Main.log().log(success + "");
+
+            timeManager = new TimeManager("LOGINS");
+
+            timeManager.setup().thenAccept((successs) -> {
+                log().log("Success? " + successs);
+                log().log("Success==============================================================");
+                log().log("Success==============================================================");
+                log().log("Success==============================================================");
+                log().log("Success==============================================================");
+                log().log("Success==============================================================");
+                log().log("Success==============================================================");
+                log().log("Success==============================================================");
+                log().log("Success==============================================================");
+            });
+
+        });
+
+
 
         getCommand("example-command").setExecutor(new ExampleCommand("example-command", "time.total"));
 
         getServer().getPluginManager().registerEvents(new LogInListener(), this);
+
+
 
     }
 
@@ -89,6 +123,7 @@ public class Main extends JavaPlugin {
 
     @Override
     public void onDisable() {
+        serverLogHandler.stop();
         SQLPool.close();
     }
 }

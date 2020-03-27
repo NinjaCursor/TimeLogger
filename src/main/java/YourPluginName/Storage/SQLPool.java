@@ -58,6 +58,7 @@ public class SQLPool {
         config.setConnectionTimeout(3000);
 
         ds = new HikariDataSource(config);
+        Main.log().log("DATABASE IS WORKING!");
     }
 
     public static Connection getConnection() throws SQLException {

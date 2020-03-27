@@ -6,12 +6,11 @@ public abstract class SequentialRunnable<T> {
 
     protected CompletableFuture<T> completableFuture;
 
-    public SequentialRunnable() {
-        completableFuture = new CompletableFuture<>();
+    public SequentialRunnable(CompletableFuture<T> future) {
+        completableFuture = future;
     }
 
-    public CompletableFuture<T> getFuture() {
-        return completableFuture;
+    public SequentialRunnable() {
     }
 
     public abstract boolean run();

@@ -6,13 +6,13 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.configuration.serialization.ConfigurationSerializable;
 import java.io.File;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Function;
 
-public class LocalFileTools<K, T extends ConfigurationSerializable & KeyValuePair<K, T>> implements GeneralDataTools<K, T> {
+public class LocalFileTools<K, T extends ConfigurationSerializable & KeyValuePair<K, T>> extends HandlerClass<K, T> {
 
-    private BlockingQueueHandler blockingQueueHandler;
     private FileConfiguration config;
     protected String fileName;
     private File file;
@@ -24,25 +24,11 @@ public class LocalFileTools<K, T extends ConfigurationSerializable & KeyValuePai
      * @postcondition: starts blockingqueuehandler
      */
     public LocalFileTools(String fileName, File file, String path, Function<String, K> keyMaker) {
+        super();
         this.fileName = fileName;
         this.file = file;
         this.path = path;
         this.keyMaker = keyMaker;
-        this.blockingQueueHandler = new BlockingQueueHandler();
-    }
-
-    /* setup() loads the files
-     * @precondition: none
-     * returns true if successful, else false
-     */
-    public boolean setup() {
-        try {
-            this.loadFile(file, fileName);
-            return true;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return false;
-        }
     }
 
     @Override
@@ -62,6 +48,11 @@ public class LocalFileTools<K, T extends ConfigurationSerializable & KeyValuePai
                 saveToFile();
             }
         };
+    }
+
+    @Override
+    public HashMap<K, T> handleRecovery(HashMap<K, T> rawData) {
+        return null;
     }
 
     /* loadFile loads file if exists or creates default one
@@ -96,7 +87,7 @@ public class LocalFileTools<K, T extends ConfigurationSerializable & KeyValuePai
      * @params: none
      */
     private void saveToFile() {
-        blockingQueueHandler.addRunnable(new SequentialRunnable<T>() {
+        run(new SequentialRunnable<T>() {
             @Override
             public boolean run() {
                 try {
@@ -110,16 +101,6 @@ public class LocalFileTools<K, T extends ConfigurationSerializable & KeyValuePai
         });
     };
 
-    /* run() runs a runnable in the thread
-     * @params: runnable
-     * @precondition: blockingQueueHandler is initialized
-     * @postcondition: the blocking queue receives the runnable
-     */
-    public CompletableFuture<T> run(SequentialRunnable runnable) {
-        blockingQueueHandler.addRunnable(runnable);
-        return runnable.getFuture();
-    }
-
     /* set() sets a key, value pair
      * @params: key and value
      * @precondition: none
@@ -129,42 +110,38 @@ public class LocalFileTools<K, T extends ConfigurationSerializable & KeyValuePai
         SequentialRunnable runnable = new SequentialRunnable() {
             @Override
             public boolean run() {
-                //F must be used since i can't save numbers as normal keys without doing this
-                //running configurationSection does not recognize numbers written as '1' or '2' with the quotes put on it
-                //which is what seems to happen if i just remove the character F
-                //i know this makes no sense but it works so who cares
-                config.set(path + ".F" + data.getKey(), data);
-                return true;
-            }
-        };
-        blockingQueueHandler.addRunnable(runnable);
-    }
-
-    /* getData() loads data and returns map
-     * @params: none
-     * @precondition: the file has been loaded to the config file
-     * returns: map with keys of type K and values of type T
-     */
-    public CompletableFuture<HashMap<K, T>> getData() {
-        Main.log().log("getData for path " + path);
-
-        SequentialRunnable<HashMap<K, T>> runnable = new SequentialRunnable() {
-            @Override
-            public boolean run() {
-            HashMap<K, T> map = new HashMap<>();
-
-            if (config.getConfigurationSection(path) != null) {
-                for (String key : config.getConfigurationSection(path).getKeys(false)) {
-                    map.put(keyMaker.apply(key.substring(1)), (T) config.get(path + "." + key));
-                }
-            }
-
-            completableFuture.complete(map);
+            //F must be used since i can't save numbers as normal keys without doing this
+            //running configurationSection does not recognize numbers written as '1' or '2' with the quotes put on it
+            //which is what seems to happen if i just remove the character '_'
+            //i know this makes no sense but it works so who cares
+            config.set(path + "._" + data.getKey(), data);
             return true;
             }
         };
-        blockingQueueHandler.addRunnable(runnable);
-        return runnable.getFuture();
+        run(runnable);
+    }
+
+    @Override
+    public boolean setupSync() {
+        try {
+            loadFile(file, fileName);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    @Override
+    public HashMap<K, T> dataSync() {
+        HashMap<K, T> map = new HashMap<>();
+
+        if (config.getConfigurationSection(path) != null) {
+            for (String key : config.getConfigurationSection(path).getKeys(false)) {
+                map.put(keyMaker.apply(key.substring(1)), (T) config.get(path + "." + key));
+            }
+        }
+
+        return map;
     };
 
 }

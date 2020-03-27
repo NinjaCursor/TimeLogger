@@ -13,7 +13,7 @@ import java.util.UUID;
 @SerializableAs("LogData")
 public class LogData implements ConfigurationSerializable, Comparable<LogData>, KeyValuePair<Long, LogData> {
 
-    private SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMMMM yyyy HH:mm:ss.SSSZ");
+    private SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSSZ");
     private LogType logType;
     private long timeStamp;
     private UUID uuid;

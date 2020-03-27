@@ -35,11 +35,6 @@ public class TimePlayer {
         return logData;
     }
 
-    public LogData getUpdateLog() {
-        this.updatedInSession = true;
-        return new LogData(LogType.CRASH_ESTIMATE_STOP, uuid, System.currentTimeMillis(), log.get(log.size()-1).getId());
-    }
-
     public ArrayList<LogData> getLogData() {
         return this.log;
     }
