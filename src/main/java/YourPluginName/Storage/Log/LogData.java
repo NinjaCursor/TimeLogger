@@ -10,8 +10,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-@SerializableAs("LogData")
-public class LogData implements ConfigurationSerializable, Comparable<LogData>, KeyValuePair<Long, LogData> {
+
+public class LogData implements Comparable<LogData>, KeyValuePair<Long, LogData> {
 
     private SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSSZ");
     private LogType logType;
@@ -40,21 +40,6 @@ public class LogData implements ConfigurationSerializable, Comparable<LogData>, 
 
     public long getId() {
         return this.id;
-    }
-
-    @Override
-    public Map<String, Object> serialize() {
-        HashMap<String, Object> hashMap = new HashMap<>();
-        hashMap.put("uuid", getUuid().toString());
-        hashMap.put("time_stamp_epoch", getTimeStamp());
-        hashMap.put("time_stamp_formatted", simpleDateFormat.format(new Date(getTimeStamp())));
-        hashMap.put("description", logType.toString());
-        hashMap.put("id", this.id);
-        return hashMap;
-    }
-
-    public static LogData deserialize(Map<String, Object> args) {
-        return new LogData(LogType.valueOf((String) args.get("description")), UUID.fromString((String) args.get("uuid")), ((Number) args.get("time_stamp_epoch")).longValue(), ((Number) args.get("id")).longValue());
     }
 
     @Override

@@ -12,7 +12,7 @@ public class AccumulatedHandler implements GeneralHandler<UUID, AccumulatedData>
 
     //todo: add database handler hee hee
     public AccumulatedHandler(File homeDirectory) {
-        tools = new LocalFileTools("Summary", homeDirectory, "Summary", (string1) -> UUID.fromString((String) string1));
+        tools = new AccumulatedDatabase("Summary");
     }
 
     @Override

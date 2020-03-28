@@ -11,6 +11,7 @@ C:\Users\jacob\IdeaProjects\TimeLogger\src\main\java\YourPluginName\Storage\KeyV
 C:\Users\jacob\IdeaProjects\TimeLogger\src\main\java\YourPluginName\Commands\AllowableUserType.java
 C:\Users\jacob\IdeaProjects\TimeLogger\src\main\java\YourPluginName\Storage\UpdateEvent.java
 C:\Users\jacob\IdeaProjects\TimeLogger\src\main\java\YourPluginName\Storage\Log\LogHandler.java
+C:\Users\jacob\IdeaProjects\TimeLogger\src\main\java\YourPluginName\Storage\DatabaseSetup.java
 C:\Users\jacob\IdeaProjects\TimeLogger\src\main\java\YourPluginName\Storage\HandlerClass.java
 C:\Users\jacob\IdeaProjects\TimeLogger\src\main\java\YourPluginName\Main\Main.java
 C:\Users\jacob\IdeaProjects\TimeLogger\src\main\java\YourPluginName\Storage\Summary\AccumulatedDatabase.java
@@ -32,5 +33,4 @@ C:\Users\jacob\IdeaProjects\TimeLogger\src\main\java\YourPluginName\Storage\Log\
 C:\Users\jacob\IdeaProjects\TimeLogger\src\main\java\YourPluginName\Storage\ServerLog\ServerLogDatabase.java
 C:\Users\jacob\IdeaProjects\TimeLogger\src\main\java\YourPluginName\Main\TimeManager.java
 C:\Users\jacob\IdeaProjects\TimeLogger\src\main\java\YourPluginName\Storage\Handler.java
-C:\Users\jacob\IdeaProjects\TimeLogger\src\main\java\YourPluginName\Storage\LocalFileTools.java
 C:\Users\jacob\IdeaProjects\TimeLogger\src\main\java\YourPluginName\Storage\GeneralDataTools.java

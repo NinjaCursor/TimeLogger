@@ -13,7 +13,13 @@ public class LogDatabaseTools extends HandlerClass<Long, LogData> {
     private final String name = "LogData";
 
     private DatabaseTable.ColumnWrapper uuidColumn, timeColumn, eventColumn, autoIncrementColumn;
-    private DatabaseTable table;
+    private DatabaseTable logTable;
+
+    private DatabaseTable.ColumnWrapper idColumn, rawEventColumn, deltaColumn;
+    private DatabaseTable rawLogTable;
+
+    private DatabaseTable.ColumnWrapper uuidPrimaryColumn, totalColumn, startCountColumn, firstTimeColumn;
+    private DatabaseTable sumTable;
 
     public LogDatabaseTools() {
         super();
@@ -21,20 +27,56 @@ public class LogDatabaseTools extends HandlerClass<Long, LogData> {
 
     @Override
     public boolean setupSync() {
-        autoIncrementColumn = new DatabaseTable.ColumnWrapper("ID", "INT NOT NULL AUTO_INCREMENT", "PRIMARY KEY");
-        uuidColumn = new DatabaseTable.ColumnWrapper("UUID", "VARCHAR(36) NOT NULL", "");
-        timeColumn = new DatabaseTable.ColumnWrapper("TIMESTAMP", "BIGINT NOT NULL", "");
-        eventColumn = new DatabaseTable.ColumnWrapper("EVENT", "ENUM('START', 'STOP') NOT NULL", "");
 
-        table = new DatabaseTable(name, autoIncrementColumn, uuidColumn, timeColumn, eventColumn);
-        table.create();
+        sumTable = new DatabaseTable(name + "_Summary", uuidPrimaryColumn, totalColumn, startCountColumn, firstTimeColumn);
+        sumTable.create();
 
-        return table.successfulInit();
+        if (sumTable.successfulInit() && logTable.successfulInit()) {
+
+            try (Connection connection = SQLPool.getConnection()) {
+               // connection.
+            } catch (SQLException e) {
+
+            }
+
+
+            boolean insertTriggerSuccess = SQLPool.sendCommand((connection) -> {
+                String sql = String.format("delimiter # CREATE TRIGGER %1$s_LOG_INSERT_TRIGGER AFTER INSERT ON %1$s " +
+                        "for each row begin " +
+                        "IF (new.EVENT = 'START') THEN " +
+                        "insert into %2$s(UUID, TIMESTAMP, EVENT) VALUES(new.UUID, new.TIMESTAMP, new.EVENT);" +
+                        "insert into %3$s(%3$s, %4$s, %5$s, %6$s) VALUES(new.UUID, 0, 1, new.TIMESTAMP) on duplicate key UPDATE START_COUNT=(START_COUNT+1);" +
+                        "ELSEIF (new.EVENT = 'STOP') THEN " +
+                        "insert into %2$s(UUID, TIMESTAMP, EVENT) VALUES(new.UUID, new.TIMESTAMP, new.EVENT);" +
+                        "UDPATE %2$s SET TOTAL=(TOTAL+new.DELTA)" +
+                        "ELSE THEN" +
+                        "" +
+                        "END IF;", rawLogTable.getName(), logTable.getName(), sumTable.getName());
+                PreparedStatement stmt = connection.prepareStatement(sql);
+                stmt.execute();
+            });
+
+            boolean updateTriggerSuccess = SQLPool.sendCommand((connection) -> {
+                String sql = String.format("delimiter # CREATE TRIGGER %1$s_LOG_UPDATE_TRIGGER AFTER UDPATE ON %1$s " +
+                        "for each row begin " +
+                        "IF (new.EVENT = 'START') THEN " +
+                        "insert into %2$s(%3$s, %4$s, %5$s, %6$s) VALUES(new.UUID, 0, 1, new.TIMESTAMP) on duplicate key UPDATE %5$s=%5$s+1;" +
+                        "ELSE THEN " +
+                        "UDPATE %2$s SET %4$s=(%4$s+new.DELTA)" +
+                        "END IF;", logTable.getName(), sumTable.getName(), uuidPrimaryColumn.getName(), totalColumn.getName(), startCountColumn.getName(), firstTimeColumn.getName());
+                PreparedStatement stmt = connection.prepareStatement(sql);
+                stmt.execute();
+            });
+
+        }
+
+
+        return logTable.successfulInit();
     }
 
     @Override
     public HashMap<Long, LogData> dataSync() {
-        String sql = String.format("SELECT * FROM %s", table.getName());
+        String sql = String.format("SELECT * FROM %s", logTable.getName());
         HashMap<Long, LogData> logs = new HashMap<>();
 
         try (Connection connection = SQLPool.getConnection()) {
@@ -84,7 +126,7 @@ public class LogDatabaseTools extends HandlerClass<Long, LogData> {
 
                 String sql;
 
-                sql = String.format("INSERT INTO %s (%s, %s, %s) VALUES(?, ?, ?)", table.getName(), uuidColumn.getName(), timeColumn.getName(), eventColumn.getName());
+                sql = String.format("INSERT INTO %s (%s, %s, %s) VALUES(?, ?, ?)", logTable.getName(), uuidColumn.getName(), timeColumn.getName(), eventColumn.getName());
                 PreparedStatement stmt = connection.prepareStatement(sql);
                 stmt.setString(1, data.getUuid().toString());
                 stmt.setLong(2, data.getTimeStamp());

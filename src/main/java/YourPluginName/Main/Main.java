@@ -1,6 +1,7 @@
 package YourPluginName.Main;
 import YourPluginName.Commands.ExampleCommand;
 import YourPluginName.Listeners.LogInListener;
+import YourPluginName.Storage.DatabaseSetup;
 import YourPluginName.Storage.ServerLog.ServerLogData;
 import YourPluginName.Storage.ServerLog.ServerLogHandler;
 import YourPluginName.Storage.Summary.AccumulatedData;
@@ -20,9 +21,9 @@ public class Main extends JavaPlugin {
     private static ServerLogHandler serverLogHandler;
 
     static {
-        ConfigurationSerialization.registerClass(LogData.class);
-        ConfigurationSerialization.registerClass(AccumulatedData.class);
-        ConfigurationSerialization.registerClass(ServerLogData.class);
+        //ConfigurationSerialization.registerClass(LogData.class);
+        //ConfigurationSerialization.registerClass(AccumulatedData.class);
+        //ConfigurationSerialization.registerClass(ServerLogData.class);
     }
 
     public static VertXLogger log() {
@@ -45,39 +46,42 @@ public class Main extends JavaPlugin {
         logger = new VertXLogger("TimeLogger");
         createConfig();
 
-        serverLogHandler = new ServerLogHandler(null);
-
-        serverLogHandler.setup().thenAccept((success) -> {
-            Main.log().log("11111111111111111111111111111");
-            Main.log().log("11111111111111111111111111111");
-            Main.log().log("11111111111111111111111111111");
-            Main.log().log("11111111111111111111111111111");
-            Main.log().log("11111111111111111111111111111");
-            Main.log().log("11111111111111111111111111111");
-            Main.log().log("11111111111111111111111111111");
-            Main.log().log("11111111111111111111111111111");
-            Main.log().log("11111111111111111111111111111");
-            Main.log().log("11111111111111111111111111111");
-            Main.log().log("11111111111111111111111111111");
-            Main.log().log(success + "");
-
-            timeManager = new TimeManager("LOGINS");
-
-            timeManager.setup().thenAccept((successs) -> {
-                log().log("Success? " + successs);
-                log().log("Success==============================================================");
-                log().log("Success==============================================================");
-                log().log("Success==============================================================");
-                log().log("Success==============================================================");
-                log().log("Success==============================================================");
-                log().log("Success==============================================================");
-                log().log("Success==============================================================");
-                log().log("Success==============================================================");
-            });
-
-        });
+        DatabaseSetup.setupTables();
 
 
+//        serverLogHandler = new ServerLogHandler(null);
+//
+//        serverLogHandler.setup().thenAccept((success) -> {
+//            Main.log().log("11111111111111111111111111111");
+//            Main.log().log("11111111111111111111111111111");
+//            Main.log().log("11111111111111111111111111111");
+//            Main.log().log("11111111111111111111111111111");
+//            Main.log().log("11111111111111111111111111111");
+//            Main.log().log("11111111111111111111111111111");
+//            Main.log().log("11111111111111111111111111111");
+//            Main.log().log("11111111111111111111111111111");
+//            Main.log().log("11111111111111111111111111111");
+//            Main.log().log("11111111111111111111111111111");
+//            Main.log().log("11111111111111111111111111111");
+//            Main.log().log(success + "");
+//
+//            timeManager = new TimeManager("LOGINS");
+//
+//            timeManager.setup().thenAccept((successs) -> {
+//                log().log("Success? " + successs);
+//                log().log("Success==============================================================");
+//                log().log("Success==============================================================");
+//                log().log("Success==============================================================");
+//                log().log("Success==============================================================");
+//                log().log("Success==============================================================");
+//                log().log("Success==============================================================");
+//                log().log("Success==============================================================");
+//                log().log("Success==============================================================");
+//            });
+//
+//        });
+//
+//
 
         getCommand("example-command").setExecutor(new ExampleCommand("example-command", "time.total"));
 

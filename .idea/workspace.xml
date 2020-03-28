@@ -1,11 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="481a7d82-8e6d-4c1d-8eef-7520c7c1c4ab" name="Default Changelist" comment="" />
+    <list default="true" id="481a7d82-8e6d-4c1d-8eef-7520c7c1c4ab" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/YourPluginName/Storage/DatabaseSetup.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/SQL_SETUP.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/YourPluginName/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/YourPluginName/Main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/YourPluginName/Storage/LocalFileTools.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/YourPluginName/Storage/Log/LogData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/YourPluginName/Storage/Log/LogData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/YourPluginName/Storage/Log/LogDatabaseTools.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/YourPluginName/Storage/Log/LogDatabaseTools.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/YourPluginName/Storage/Log/LogHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/YourPluginName/Storage/Log/LogHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/YourPluginName/Storage/ServerLog/ServerLogData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/YourPluginName/Storage/ServerLog/ServerLogData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/YourPluginName/Storage/Summary/AccumulatedHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/YourPluginName/Storage/Summary/AccumulatedHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TimeLogger-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/TimeLogger-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/YourPluginName/Main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/YourPluginName/Main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/YourPluginName/Main/TimeManager$ManagerData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/YourPluginName/Main/TimeManager$ManagerData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/YourPluginName/Main/TimeManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/YourPluginName/Main/TimeManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/YourPluginName/Storage/LocalFileTools$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/YourPluginName/Storage/LocalFileTools$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/YourPluginName/Storage/LocalFileTools$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/YourPluginName/Storage/LocalFileTools.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/YourPluginName/Storage/Log/LogData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/YourPluginName/Storage/Log/LogData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/YourPluginName/Storage/Log/LogDatabaseTools$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/YourPluginName/Storage/Log/LogDatabaseTools$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/YourPluginName/Storage/Log/LogDatabaseTools$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/YourPluginName/Storage/Log/LogDatabaseTools$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/YourPluginName/Storage/Log/LogDatabaseTools.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/YourPluginName/Storage/Log/LogDatabaseTools.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/YourPluginName/Storage/Log/LogHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/YourPluginName/Storage/Log/LogHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/YourPluginName/Storage/ServerLog/ServerLogData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/YourPluginName/Storage/ServerLog/ServerLogData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/YourPluginName/Storage/Summary/AccumulatedHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/YourPluginName/Storage/Summary/AccumulatedHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/original-TimeLogger-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-TimeLogger-1.0-SNAPSHOT.jar" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -27,6 +75,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -68,7 +117,7 @@
       <workItem from="1581816232574" duration="15556000" />
       <workItem from="1584732169467" duration="40306000" />
       <workItem from="1585065955392" duration="86822000" />
-      <workItem from="1585321284487" duration="554000" />
+      <workItem from="1585321284487" duration="19682000" />
     </task>
     <servers />
   </component>
@@ -76,6 +125,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="872" y="361" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585337309804">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="872" y="361" key="#com.intellij.execution.impl.EditConfigurationsDialog/2560.0.1280.984/0.0.2560.1400@0.0.2560.1400" timestamp="1585337309804" />
     <state x="1725" y="421" key="#com.intellij.ide.util.MemberChooser" timestamp="1585259833056">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -86,21 +139,21 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="828" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/2560.0.1280.984/0.0.2560.1400@0.0.2560.1400" timestamp="1585237889002" />
-    <state x="1010" y="447" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1585198506454">
+    <state x="1010" y="447" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1585321972192">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1010" y="447" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1581817536545" />
     <state x="808" y="355" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/2560.0.1280.974/0.0.2048.1112@0.0.2048.1112" timestamp="1584988216769" />
-    <state x="1010" y="447" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/2560.0.1280.984/0.0.2560.1400@0.0.2560.1400" timestamp="1585198506454" />
+    <state x="1010" y="447" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/2560.0.1280.984/0.0.2560.1400@0.0.2560.1400" timestamp="1585321972192" />
     <state x="1700" y="459" key="FileChooserDialogImpl" timestamp="1581881307521">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1700" y="459" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1581881307521" />
-    <state x="666" y="249" key="SettingsEditor" timestamp="1585321294344">
+    <state x="666" y="249" key="SettingsEditor" timestamp="1585366052686">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="533" y="198" key="SettingsEditor/2560.0.1280.974/0.0.2048.1112@0.0.2048.1112" timestamp="1584985191321" />
-    <state x="666" y="249" key="SettingsEditor/2560.0.1280.984/0.0.2560.1400@0.0.2560.1400" timestamp="1585321294344" />
+    <state x="666" y="249" key="SettingsEditor/2560.0.1280.984/0.0.2560.1400@0.0.2560.1400" timestamp="1585366052686" />
     <state x="1302" y="428" key="new project wizard" timestamp="1581711189845">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

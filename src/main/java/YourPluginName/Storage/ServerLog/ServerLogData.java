@@ -1,29 +1,8 @@
 package YourPluginName.Storage.ServerLog;
 
 import YourPluginName.Storage.KeyValuePair;
-import YourPluginName.Storage.Log.LogData;
-import YourPluginName.Storage.Log.LogType;
-import org.bukkit.configuration.serialization.ConfigurationSerializable;
-import org.bukkit.configuration.serialization.SerializableAs;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
-
-@SerializableAs("ServerLogData")
-public class ServerLogData implements ConfigurationSerializable, KeyValuePair {
-
-    @Override
-    public Map<String, Object> serialize() {
-        HashMap<String, Object> map = new HashMap<>();
-        map.put("timestamp", getTimeStamp());
-        map.put("event", getEvent().toString());
-        return map;
-    }
-
-    public static ServerLogData deserialize(Map<String, Object> args) {
-        return new ServerLogData(ServerEvent.valueOf((String) args.get("event")), ((Number) args.get("timestamp")).longValue());
-    }
+public class ServerLogData implements KeyValuePair {
 
     @Override
     public Object getKey() {
