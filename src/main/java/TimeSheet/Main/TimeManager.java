@@ -23,7 +23,7 @@ public class TimeManager extends BlockingQueueThread {
             public void run() {
                 update();
             }
-        }, TimeSheet.getUpdateTickDelay(), TimeSheet.getUpdateTickDelay());
+        }, TimeSheet.getUpdateTickDelay()*20, TimeSheet.getUpdateTickDelay()*20);
 
     }
 
@@ -35,7 +35,7 @@ public class TimeManager extends BlockingQueueThread {
             public boolean run() {
                 SQLPool.sendCommand((connection) -> {
                     for (UUID uuid : uuidsActive.values()) {
-                        sendNewEvent(uuid, timeStamp, LogType.UDPATE);
+                        sendNewEvent(uuid, timeStamp, LogType.UPDATE);
                     }
                 });
                 return true;

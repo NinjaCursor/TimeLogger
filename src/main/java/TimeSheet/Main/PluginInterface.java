@@ -20,7 +20,7 @@ public class PluginInterface extends BlockingQueueThread implements PluginInterf
     }
 
     public CompletableFuture<PlayerTimePackage> getTimePackage(UUID uuid, String eventName) {
-        return new CompletableFuture<PlayerTimePackage>().thenApplyAsync((success) -> {
+        return CompletableFuture.supplyAsync(() -> {
             PlayerTimePackage timePackage = null;
 
             try (Connection connection = SQLPool.getConnection()) {

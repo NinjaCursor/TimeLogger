@@ -1,5 +1,5 @@
 package TimeSheet.Main;
 
 public enum LogType {
-    START, STOP, UDPATE
+    START, STOP, UPDATE
 }

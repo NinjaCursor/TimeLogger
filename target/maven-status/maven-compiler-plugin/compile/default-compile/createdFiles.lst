@@ -15,7 +15,6 @@ TimeSheet\Listeners\LogInListener.class
 TimeSheet\Main\TimeManager.class
 TimeSheet\Main\SummaryData.class
 TimeSheet\Commands\AllowableUserType.class
-TimeSheet\Main\TimePlayer.class
 TimeSheet\Storage\DatabaseSetup$1.class
 TimeSheet\Storage\SequentialRunnable.class
 TimeSheet\Main\TimeManager$1.class
@@ -23,6 +22,7 @@ TimeSheet\Storage\SQLPool.class
 TimeSheet\Main\VertXLogger.class
 TimeSheet\Main\TimeManager$3.class
 TimeSheet\Commands\CommandAsset.class
+TimeSheet\Commands\TotalTimeCommand$1.class
 TimeSheet\Commands\TotalTimeCommand.class
 TimeSheet\Main\PlayerTimePackage.class
 TimeSheet\Main\TimeSheet.class

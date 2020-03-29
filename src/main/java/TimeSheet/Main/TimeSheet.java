@@ -25,7 +25,6 @@ public class TimeSheet extends JavaPlugin {
     public static long getUpdateTickDelay() { return updateTickDelay; }
     public static CompletableFuture<PluginInterface> getAPI() { return pluginInterface; }
 
-
     @Override
     public void onEnable() {
         plugin = this;
@@ -54,7 +53,7 @@ public class TimeSheet extends JavaPlugin {
            }
         });
 
-        getCommand("example-command").setExecutor(new TotalTimeCommand("example-command", "time.total"));
+        getCommand("totaltime").setExecutor(new TotalTimeCommand("totaltime", "time.total"));
 
         getServer().getPluginManager().registerEvents(new LogInListener(), this);
 
@@ -92,4 +91,5 @@ public class TimeSheet extends JavaPlugin {
         pluginInterface.thenAccept((handler) -> handler.close());
         SQLPool.close();
     }
+
 }
