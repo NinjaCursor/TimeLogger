@@ -1,5 +1,5 @@
-#use-database set to true if you want to use database, defaults to local storage
-use-database: false
+#update_alive rate (in seconds) (increases accuracy on server crashes and sum table's data for currently online players)
+update_delay: 30
 
 #database settings
 host: "my_host.com"
