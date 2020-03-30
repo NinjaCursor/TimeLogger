@@ -14,7 +14,7 @@ public class TimeSheet extends JavaPlugin {
     private static JavaPlugin plugin;
     private static VertXLogger logger;
     private static long updateTickDelay;
-    private static CompletableFuture<PluginInterface> pluginInterface;
+    private static CompletableFuture<TimeSheetAPI> pluginInterface;
 
     public static VertXLogger log() {
         return logger;
@@ -23,7 +23,7 @@ public class TimeSheet extends JavaPlugin {
         return plugin;
     }
     public static long getUpdateTickDelay() { return updateTickDelay; }
-    public static CompletableFuture<PluginInterface> getAPI() { return pluginInterface; }
+    public static CompletableFuture<TimeSheetAPI> getAPI() { return pluginInterface; }
 
     @Override
     public void onEnable() {
@@ -46,7 +46,7 @@ public class TimeSheet extends JavaPlugin {
                         pluginInterface.complete(null);
                    else {
                        TimeSheet.log().log("SDFSDFSDF");
-                       pluginInterface.complete(new PluginInterface(handlerMap));
+                       pluginInterface.complete(new TimeSheetAPI(handlerMap));
                    }
 
                });

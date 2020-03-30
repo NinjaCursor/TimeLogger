@@ -11,11 +11,11 @@ import java.util.HashMap;
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 
-public class PluginInterface extends BlockingQueueThread implements PluginInterfacePublic {
+public class TimeSheetAPI extends BlockingQueueThread implements PluginInterfacePublic {
 
     private HashMap<String, TimeManager> managers;
 
-    public PluginInterface(HashMap<String, TimeManager> managers) {
+    public TimeSheetAPI(HashMap<String, TimeManager> managers) {
         this.managers = managers;
     }
 
