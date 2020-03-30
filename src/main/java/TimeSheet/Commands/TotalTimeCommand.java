@@ -14,7 +14,7 @@ public class TotalTimeCommand extends CommandAsset {
     @Override
     public boolean execute(CommandSender sender, String[] args) {
         Player player = (Player) sender;
-        TimeSheet.getAPI().thenCompose(api -> api.getTimePackage(player.getUniqueId(), "LOGINS")).thenAccept((data) -> {
+        TimeSheet.getAPI().thenCompose(api -> api.getTimePackage(player.getUniqueId().toString(), "LOGINS")).thenAccept((data) -> {
             Bukkit.getScheduler().callSyncMethod(TimeSheet.getPlugin(), new Callable<Long>() {
                 @Override
                 public Long call() throws Exception {

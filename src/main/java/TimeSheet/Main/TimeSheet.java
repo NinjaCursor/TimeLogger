@@ -7,8 +7,8 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 import java.io.File;
-import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
 
 public class TimeSheet extends JavaPlugin {
 
@@ -29,7 +29,7 @@ public class TimeSheet extends JavaPlugin {
     @Override
     public void onEnable() {
         plugin = this;
-        logger = new VertXLogger("TimeLogger");
+        logger = new VertXLogger("TimeSheet");
 
         createConfig();
         updateTickDelay = getConfig().getLong("update_delay");
@@ -46,7 +46,6 @@ public class TimeSheet extends JavaPlugin {
                    if (handlerMap == null)
                         pluginInterface.complete(null);
                    else {
-                       TimeSheet.log().log("SDFSDFSDF");
                        pluginInterface.complete(new TimeSheetAPI(handlerMap));
                    }
 
@@ -56,9 +55,8 @@ public class TimeSheet extends JavaPlugin {
 
         //handle server start
         final long timeStamp = System.currentTimeMillis();
-        pluginInterface.thenAccept(api -> {
-            api.createHandler("SERVER_ONLINE");
-            api.start("SERVER_ONLINE", UUID.randomUUID(), timeStamp);
+        pluginInterface.thenCompose(api -> api.createHandler("SERVER_ONLINE")).thenAccept((success) -> {
+            pluginInterface.thenAccept(api -> api.start("SERVER_ONLINE", "SERVER", timeStamp));
         });
 
         getCommand("totaltime").setExecutor(new TotalTimeCommand("totaltime", "time.total"));
@@ -98,11 +96,11 @@ public class TimeSheet extends JavaPlugin {
     public void onDisable() {
         //handle server stop
         final long timeStamp = System.currentTimeMillis();
-        pluginInterface.thenAccept((handler) -> {
-            handler.stop("SERVER_ONLINE", UUID.randomUUID(), timeStamp);
-            handler.close();
+        pluginInterface.thenAccept(api -> {
+            api.disable(timeStamp).thenAccept(f -> {
+                SQLPool.close();
+            });
         });
-        SQLPool.close();
     }
 
 }

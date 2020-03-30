@@ -3,6 +3,7 @@ TimeSheet\Main\LogData.class
 TimeSheet\Storage\ThrowingConsumer.class
 TimeSheet\Storage\BlockingQueueHandler$1.class
 TimeSheet\Main\TimeHandlerAPI.class
+TimeSheet\Main\TimeManager$4.class
 TimeSheet\Storage\BlockingQueueHandler.class
 TimeSheet\Storage\DatabaseSetup.class
 TimeSheet\Storage\ThrowingFunction.class
@@ -13,6 +14,7 @@ TimeSheet\Storage\BlockingQueueThread.class
 TimeSheet\Listeners\LogInListener.class
 TimeSheet\Main\TimeManager.class
 TimeSheet\Main\SummaryData.class
+TimeSheet\Main\TimeSheetAPI$1.class
 TimeSheet\Commands\AllowableUserType.class
 TimeSheet\Storage\DatabaseSetup$1.class
 TimeSheet\Storage\SequentialRunnable.class

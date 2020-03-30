@@ -10,7 +10,7 @@ public interface PluginInterfacePublic {
      * @precondition: eventName exists
      * @returns: completablefuture of PlayerTimePackage containing logs and summary data if event is registered, else null
      */
-    CompletableFuture<PlayerTimePackage> getTimePackage(final UUID uuid, final String eventName);
+    CompletableFuture<PlayerTimePackage> getTimePackage(final String uuid, final String eventName);
 
     /* createHandler()
      * @params: name of event type to register
@@ -26,6 +26,6 @@ public interface PluginInterfacePublic {
      * @precondition: name of event type is registered with the createHandler
      * @postcondition: sum_table and log_table are updated with given data asynchronously if event is registered
      */
-    void start(final String name, final UUID uuid, final long timeStamp);
-    void stop(final String name, final UUID uuid, final long timeStamp);
+    void start(final String name, final String uuid, final long timeStamp);
+    void stop(final String name, final String uuid, final long timeStamp);
 }

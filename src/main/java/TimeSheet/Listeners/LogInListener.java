@@ -18,7 +18,7 @@ public class LogInListener implements Listener {
 
         final long timeStamp = System.currentTimeMillis();
 
-        TimeSheet.getAPI().thenAccept((api) -> api.start("LOGINS", uuid, timeStamp));
+        TimeSheet.getAPI().thenCompose(api -> api.createHandler("LOGINS")).thenAccept((success) -> TimeSheet.getAPI().thenAccept(api -> api.start("LOGINS", uuid.toString(), timeStamp)));
     }
 
     @EventHandler
@@ -28,7 +28,7 @@ public class LogInListener implements Listener {
 
         final long timeStamp = System.currentTimeMillis();
 
-        TimeSheet.getAPI().thenAccept((api) -> api.stop("LOGINS", uuid, timeStamp));
+        TimeSheet.getAPI().thenCompose(api -> api.createHandler("LOGINS")).thenAccept((success) -> TimeSheet.getAPI().thenAccept(api -> api.stop("LOGINS", uuid.toString(), timeStamp)));
     }
 
 }
