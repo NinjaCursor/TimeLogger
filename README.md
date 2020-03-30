@@ -1,4 +1,4 @@
-# TimeSheet Plugin
+# TimeSheet
 
 A simple, yet expandable, logger for logging in and out of Spigot, Bukkit, or Paper servers. 
 
