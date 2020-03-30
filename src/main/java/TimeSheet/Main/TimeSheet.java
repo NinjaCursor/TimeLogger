@@ -7,6 +7,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 import java.io.File;
+import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 
 public class TimeSheet extends JavaPlugin {
@@ -53,6 +54,13 @@ public class TimeSheet extends JavaPlugin {
            }
         });
 
+        //handle server start
+        final long timeStamp = System.currentTimeMillis();
+        pluginInterface.thenAccept(api -> {
+            api.createHandler("SERVER_ONLINE");
+            api.start("SERVER_ONLINE", UUID.randomUUID(), timeStamp);
+        });
+
         getCommand("totaltime").setExecutor(new TotalTimeCommand("totaltime", "time.total"));
 
         getServer().getPluginManager().registerEvents(new LogInListener(), this);
@@ -88,7 +96,12 @@ public class TimeSheet extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        pluginInterface.thenAccept((handler) -> handler.close());
+        //handle server stop
+        final long timeStamp = System.currentTimeMillis();
+        pluginInterface.thenAccept((handler) -> {
+            handler.stop("SERVER_ONLINE", UUID.randomUUID(), timeStamp);
+            handler.close();
+        });
         SQLPool.close();
     }
 

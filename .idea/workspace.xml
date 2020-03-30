@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="481a7d82-8e6d-4c1d-8eef-7520c7c1c4ab" name="Default Changelist" comment="" />
+    <list default="true" id="481a7d82-8e6d-4c1d-8eef-7520c7c1c4ab" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/TimeSheet/Main/TimeSheet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TimeSheet/Main/TimeSheet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TimeLogger-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/TimeLogger-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/TimeSheet/Commands/TotalTimeCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TimeSheet/Commands/TotalTimeCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/TimeSheet/Listeners/LogInListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TimeSheet/Listeners/LogInListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/TimeSheet/Main/PluginInterface.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/TimeSheet/Main/TimeSheet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TimeSheet/Main/TimeSheet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/original-TimeLogger-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-TimeLogger-1.0-SNAPSHOT.jar" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -99,7 +112,8 @@
       <workItem from="1581816232574" duration="15556000" />
       <workItem from="1584732169467" duration="40306000" />
       <workItem from="1585065955392" duration="86822000" />
-      <workItem from="1585321284487" duration="71902000" />
+      <workItem from="1585321284487" duration="72997000" />
+      <workItem from="1585594753683" duration="1159000" />
     </task>
     <servers />
   </component>
@@ -160,14 +174,18 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="996" y="312" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/2560.0.1280.984/0.0.2560.1400@0.0.2560.1400" timestamp="1585420053021" />
+    <state x="2846" y="301" key="com.intellij.ide.util.TipDialog" timestamp="1585594782652">
+      <screen x="2560" y="0" width="1280" height="984" />
+    </state>
+    <state x="2846" y="301" key="com.intellij.ide.util.TipDialog/2560.0.1280.984/0.0.2560.1400@2560.0.1280.984" timestamp="1585594782652" />
     <state x="1091" y="618" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1585440725848">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1091" y="618" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/2560.0.1280.984/0.0.2560.1400@0.0.2560.1400" timestamp="1585440725848" />
-    <state x="1166" y="315" width="1315" height="753" maximized="true" key="dock-window-1" timestamp="1585532065154">
+    <state x="1166" y="315" width="1315" height="753" maximized="true" key="dock-window-1" timestamp="1585594796066">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1166" y="315" width="1315" height="753" maximized="true" key="dock-window-1/2560.0.1280.984/0.0.2560.1400@0.0.2560.1400" timestamp="1585532065154" />
+    <state x="1166" y="315" width="1315" height="753" maximized="true" key="dock-window-1/2560.0.1280.984/0.0.2560.1400@0.0.2560.1400" timestamp="1585538835255" />
     <state x="1302" y="428" key="new project wizard" timestamp="1581711189845">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -177,11 +195,11 @@
     </state>
     <state x="681" y="259" width="672" height="677" key="run.anything.popup/2560.0.1280.974/0.0.2048.1112@0.0.2048.1112" timestamp="1584997320386" />
     <state x="851" y="326" width="840" height="853" key="run.anything.popup/2560.0.1280.984/0.0.2560.1400@0.0.2560.1400" timestamp="1585189463455" />
-    <state x="1583" y="320" width="840" height="679" key="search.everywhere.popup" timestamp="1585242195044">
+    <state x="1583" y="320" width="840" height="679" key="search.everywhere.popup" timestamp="1585598840073">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1583" y="320" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1581728450475" />
     <state x="1266" y="254" width="672" height="539" key="search.everywhere.popup/2560.0.1280.974/0.0.2048.1112@0.0.2048.1112" timestamp="1584923553532" />
-    <state x="1583" y="320" width="840" height="679" key="search.everywhere.popup/2560.0.1280.984/0.0.2560.1400@0.0.2560.1400" timestamp="1585242195044" />
+    <state x="1583" y="320" width="840" height="679" key="search.everywhere.popup/2560.0.1280.984/0.0.2560.1400@0.0.2560.1400" timestamp="1585598840073" />
   </component>
 </project>

@@ -1,5 +1,4 @@
 TimeSheet\Main\LogType.class
-TimeSheet\Main\PluginInterface.class
 TimeSheet\Main\LogData.class
 TimeSheet\Storage\ThrowingConsumer.class
 TimeSheet\Storage\BlockingQueueHandler$1.class
@@ -21,6 +20,7 @@ TimeSheet\Main\TimeManager$1.class
 TimeSheet\Storage\SQLPool.class
 TimeSheet\Main\VertXLogger.class
 TimeSheet\Main\TimeManager$3.class
+TimeSheet\Main\TimeSheetAPI.class
 TimeSheet\Commands\CommandAsset.class
 TimeSheet\Commands\TotalTimeCommand$1.class
 TimeSheet\Commands\TotalTimeCommand.class
