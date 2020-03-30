@@ -3,29 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="481a7d82-8e6d-4c1d-8eef-7520c7c1c4ab" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TimeSheet/Commands/TotalTimeCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TimeSheet/Commands/TotalTimeCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TimeSheet/Main/LogType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TimeSheet/Main/LogType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TimeSheet/Main/PluginInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TimeSheet/Main/PluginInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TimeSheet/Main/TimeManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TimeSheet/Main/TimeManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TimeSheet/Main/TimeSheet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TimeSheet/Main/TimeSheet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SQL_SETUP.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/SQL_SETUP.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TimeLogger-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/TimeLogger-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TimeSheet/Commands/TotalTimeCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TimeSheet/Commands/TotalTimeCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TimeSheet/Listeners/LogInListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TimeSheet/Listeners/LogInListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TimeSheet/Main/LogType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TimeSheet/Main/LogType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TimeSheet/Main/PluginInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TimeSheet/Main/PluginInterface.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TimeSheet/Main/TimeManager$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TimeSheet/Main/TimeManager$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TimeSheet/Main/TimeManager$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TimeSheet/Main/TimeManager$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TimeSheet/Main/TimeManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TimeSheet/Main/TimeManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TimeSheet/Main/TimePlayer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TimeSheet/Main/TimeSheet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TimeSheet/Main/TimeSheet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TimeSheet/Storage/SQLPool.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TimeSheet/Storage/SQLPool.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plugin.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/original-TimeLogger-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-TimeLogger-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/asdf" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +102,7 @@
       <workItem from="1581816232574" duration="15556000" />
       <workItem from="1584732169467" duration="40306000" />
       <workItem from="1585065955392" duration="86822000" />
-      <workItem from="1585321284487" duration="70431000" />
+      <workItem from="1585321284487" duration="71515000" />
     </task>
     <servers />
   </component>
@@ -189,10 +167,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1091" y="618" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/2560.0.1280.984/0.0.2560.1400@0.0.2560.1400" timestamp="1585440725848" />
-    <state x="1166" y="315" width="1315" height="753" key="dock-window-1" timestamp="1585522127968">
+    <state x="1166" y="315" width="1315" height="753" maximized="true" key="dock-window-1" timestamp="1585532065154">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1166" y="315" width="1315" height="753" key="dock-window-1/2560.0.1280.984/0.0.2560.1400@0.0.2560.1400" timestamp="1585522127968" />
+    <state x="1166" y="315" width="1315" height="753" maximized="true" key="dock-window-1/2560.0.1280.984/0.0.2560.1400@0.0.2560.1400" timestamp="1585532065154" />
     <state x="1302" y="428" key="new project wizard" timestamp="1581711189845">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
