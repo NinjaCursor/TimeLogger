@@ -95,7 +95,6 @@ public class TimeSheet extends JavaPlugin {
     @Override
     public void onDisable() {
 
-        TimeSheet.log().log("DISABLING!!!==========================");
         //handle server stop
         final long timeStamp = System.currentTimeMillis();
         pluginInterface.thenAccept(api -> {

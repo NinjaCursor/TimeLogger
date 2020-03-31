@@ -1,8 +1,6 @@
 package TimeSheet.Main;
 import TimeSheet.Storage.BlockingQueueThread;
 import TimeSheet.Storage.SequentialRunnable;
-
-import java.sql.Array;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -10,7 +8,6 @@ import java.util.concurrent.ConcurrentHashMap;
 import TimeSheet.Storage.SQLPool;
 import org.bukkit.Bukkit;
 import java.sql.PreparedStatement;
-import java.util.UUID;
 
 public class TimeManager extends BlockingQueueThread {
 
@@ -55,19 +52,15 @@ public class TimeManager extends BlockingQueueThread {
         SequentialRunnable runnable = new SequentialRunnable(future) {
             @Override
             public boolean run() {
-                TimeSheet.log().log("SERVER SENDS STOP FOR " + name);
                 boolean success = SQLPool.sendCommand((connection) -> {
-                    TimeSheet.log().log("Marker 1");
                     PreparedStatement stmt = connection.prepareStatement("CALL LOG_EVENT(?, ?, ?, ?);");
                     stmt.setString(1, playerIDString);
                     stmt.setLong(2, timeStamp);
                     stmt.setString(3, event.toString());
                     stmt.setString(4, name);
                     stmt.execute();
-                    TimeSheet.log().log("Marker 2");
                 });
                 future.complete(1L);
-                TimeSheet.log().log("Marker 3");
                 return true;
             }
         };
@@ -86,7 +79,6 @@ public class TimeManager extends BlockingQueueThread {
     }
 
     public CompletableFuture<Void> disable(final long timeStamp) {
-        TimeSheet.log().log(String.format("THERE ARE %s UUIDS ACTIVE IN %s", uuidsActive.size(), name));
         CompletableFuture<List<CompletableFuture>> futureList = new CompletableFuture<>();
         SequentialRunnable runnable = new SequentialRunnable(futureList) {
             @Override

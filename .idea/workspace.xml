@@ -6,13 +6,6 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/TimeSheet/Main/TimeManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TimeSheet/Main/TimeManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/TimeSheet/Main/TimeSheet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TimeSheet/Main/TimeSheet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/TimeSheet/Main/TimeSheetAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TimeSheet/Main/TimeSheetAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TimeLogger-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/TimeLogger-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TimeSheet/Main/TimeManager$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TimeSheet/Main/TimeManager$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TimeSheet/Main/TimeManager$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TimeSheet/Main/TimeManager$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TimeSheet/Main/TimeManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TimeSheet/Main/TimeManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TimeSheet/Main/TimeSheet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TimeSheet/Main/TimeSheet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/original-TimeLogger-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-TimeLogger-1.0-SNAPSHOT.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +105,7 @@
       <workItem from="1584732169467" duration="40306000" />
       <workItem from="1585065955392" duration="86822000" />
       <workItem from="1585321284487" duration="72997000" />
-      <workItem from="1585594753683" duration="10078000" />
+      <workItem from="1585594753683" duration="11425000" />
     </task>
     <servers />
   </component>
@@ -185,6 +178,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="198" y="353" width="926" height="530" key="dock-window-1/2560.0.1280.984/0.0.2560.1400@0.0.2560.1400" timestamp="1585619672128" />
+    <state x="987" y="334" width="586" height="732" key="find.popup" timestamp="1585624710867">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="987" y="334" width="586" height="732" key="find.popup/2560.0.1280.984/0.0.2560.1400@0.0.2560.1400" timestamp="1585624710867" />
     <state x="1302" y="428" key="new project wizard" timestamp="1581711189845">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -194,11 +191,11 @@
     </state>
     <state x="681" y="259" width="672" height="677" key="run.anything.popup/2560.0.1280.974/0.0.2048.1112@0.0.2048.1112" timestamp="1584997320386" />
     <state x="851" y="326" width="840" height="853" key="run.anything.popup/2560.0.1280.984/0.0.2560.1400@0.0.2560.1400" timestamp="1585189463455" />
-    <state x="1583" y="320" width="840" height="679" key="search.everywhere.popup" timestamp="1585599932978">
+    <state x="1583" y="320" width="840" height="679" key="search.everywhere.popup" timestamp="1585624621350">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1583" y="320" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1581728450475" />
     <state x="1266" y="254" width="672" height="539" key="search.everywhere.popup/2560.0.1280.974/0.0.2048.1112@0.0.2048.1112" timestamp="1584923553532" />
-    <state x="1583" y="320" width="840" height="679" key="search.everywhere.popup/2560.0.1280.984/0.0.2560.1400@0.0.2560.1400" timestamp="1585599932978" />
+    <state x="1583" y="320" width="840" height="679" key="search.everywhere.popup/2560.0.1280.984/0.0.2560.1400@0.0.2560.1400" timestamp="1585624621350" />
   </component>
 </project>

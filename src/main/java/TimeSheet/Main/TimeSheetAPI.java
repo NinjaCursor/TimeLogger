@@ -82,7 +82,6 @@ public class TimeSheetAPI extends BlockingQueueThread implements PluginInterface
                 @Override
                 public boolean run() {
                     TimeSheet.log().log("Creating new event_name called " + name);
-                    TimeSheet.log().log("MARKER 4");
                     try (Connection connection = SQLPool.getConnection()) {
                         PreparedStatement stmt = connection.prepareStatement("CALL REGISTER_EVENT(?);");
                         stmt.setString(1, name);
@@ -103,7 +102,6 @@ public class TimeSheetAPI extends BlockingQueueThread implements PluginInterface
         List<CompletableFuture> futures = new ArrayList<>();
         for (Map.Entry<String, TimeManager> entry : managers.entrySet()) {
             futures.add(entry.getValue().disable(timeStamp));
-            TimeSheet.log().log("Logging stop for all players in " + entry.getKey());
         }
         return CompletableFuture.allOf(futures.toArray(new CompletableFuture[futures.size()])).thenAccept(f -> close());
     }
