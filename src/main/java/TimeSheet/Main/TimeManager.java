@@ -55,15 +55,19 @@ public class TimeManager extends BlockingQueueThread {
         SequentialRunnable runnable = new SequentialRunnable(future) {
             @Override
             public boolean run() {
+                TimeSheet.log().log("SERVER SENDS STOP FOR " + name);
                 boolean success = SQLPool.sendCommand((connection) -> {
-                    PreparedStatement stmt = connection.prepareStatement("CALL LOG_EVENT(?, ?, ?, ?)");
+                    TimeSheet.log().log("Marker 1");
+                    PreparedStatement stmt = connection.prepareStatement("CALL LOG_EVENT(?, ?, ?, ?);");
                     stmt.setString(1, playerIDString);
                     stmt.setLong(2, timeStamp);
                     stmt.setString(3, event.toString());
                     stmt.setString(4, name);
                     stmt.execute();
+                    TimeSheet.log().log("Marker 2");
                 });
                 future.complete(1L);
+                TimeSheet.log().log("Marker 3");
                 return true;
             }
         };
@@ -82,6 +86,7 @@ public class TimeManager extends BlockingQueueThread {
     }
 
     public CompletableFuture<Void> disable(final long timeStamp) {
+        TimeSheet.log().log(String.format("THERE ARE %s UUIDS ACTIVE IN %s", uuidsActive.size(), name));
         CompletableFuture<List<CompletableFuture>> futureList = new CompletableFuture<>();
         SequentialRunnable runnable = new SequentialRunnable(futureList) {
             @Override
@@ -97,8 +102,7 @@ public class TimeManager extends BlockingQueueThread {
             }
         };
         run(runnable);
-        close();
-        return futureList.thenCompose(list -> CompletableFuture.allOf(list.toArray(new CompletableFuture[list.size()])));
+        return futureList.thenCompose(list -> CompletableFuture.allOf(list.toArray(new CompletableFuture[list.size()]))).thenAccept((f) -> close());
     }
 
 }

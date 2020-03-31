@@ -105,7 +105,6 @@ public class TimeSheetAPI extends BlockingQueueThread implements PluginInterface
             futures.add(entry.getValue().disable(timeStamp));
             TimeSheet.log().log("Logging stop for all players in " + entry.getKey());
         }
-        close();
-        return CompletableFuture.allOf(futures.toArray(new CompletableFuture[futures.size()]));
+        return CompletableFuture.allOf(futures.toArray(new CompletableFuture[futures.size()])).thenAccept(f -> close());
     }
 }
